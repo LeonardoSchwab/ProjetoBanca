@@ -6,44 +6,38 @@ using System.Web;
 
 namespace ProjetoBanca.DAO
 {
-    public class PessoaFisicaDAO
+    public class TipoUsuarioDAO
     {
-        public void Adicionar(PessoaFisica pessoaFisica)
+        public void Adicionar(TipoUsuario tipo)
         {
             using (var context = new ProjetoContext())
             {
-                context.PessoaFisica.Add(pessoaFisica);
+                context.TipoUsuario.Add(tipo);
                 context.SaveChanges();
             }
         }
 
-        public void Remover(PessoaFisica pessoaFisica)
+        public void Remover(TipoUsuario tipo)
         {
             using (var context = new ProjetoContext())
             {
-                context.PessoaFisica.Remove(pessoaFisica);
+                context.TipoUsuario.Remove(tipo);
                 context.SaveChanges();
             }
         }
-
-        public PessoaFisica Buscar(string cpf, string dataNascimento)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Atualizar(PessoaFisica pessoaFisica)
+        public void Atualizar(TipoUsuario tipo)
         {
             using (var context = new ProjetoContext())
             {
-                context.PessoaFisica.Update(pessoaFisica);
+                context.TipoUsuario.Update(tipo);
                 context.SaveChanges();
             }
         }
-        public IList<PessoaFisica> Lista()
+        public IList<Produto> Lista()
         {
             using (var context = new ProjetoContext())
             {
-                return context.PessoaFisica.ToList();
+                return context.TipoUsuario.ToList();
             }
         }
     }

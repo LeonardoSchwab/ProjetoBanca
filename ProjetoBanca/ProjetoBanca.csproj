@@ -221,13 +221,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PessoaFisicaController.cs" />
+    <Compile Include="Controllers\PessoaJuridicaController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\PromocaoController.cs" />
+    <Compile Include="Controllers\TipoUsuarioController.cs" />
+    <Compile Include="Controllers\VendaController.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\PessoaFisicaDAO.cs" />
     <Compile Include="DAO\PessoaJuridicaDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
     <Compile Include="DAO\PromocaoDAO.cs" />
+    <Compile Include="DAO\TipoUsuarioDAO.cs" />
     <Compile Include="DAO\VendasDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -281,9 +290,24 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Produto\Form.cshtml" />
+    <Content Include="Views\Promocao\Index.cshtml" />
+    <Content Include="Views\Promocao\Form.cshtml" />
+    <Content Include="Views\PessoaFisica\Index.cshtml" />
+    <Content Include="Views\PessoaFisica\Form.cshtml" />
+    <Content Include="Views\PessoaJuridica\Index.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Categoria\Form.cshtml" />
+    <Content Include="Views\PessoaJuridica\Form.cshtml" />
+    <Content Include="Views\TipoUsuario\Index.cshtml" />
+    <Content Include="Views\TipoUsuario\Form.cshtml" />
+    <Content Include="Views\Venda\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Filtros\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

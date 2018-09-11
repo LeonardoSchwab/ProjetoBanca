@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+</head>
+<body>
+    <div>
+        <form action="/PessoaJuridica/Adiciona" method="post">
+            <label for="nome">Nome:</label>
+            <input id="nome" name="pessoa.Nome" />
+
+            <label for="rua">Rua:</label>
+            <input id="rua" name="pessoa.Rua" />
+
+            <label for="bairro">Bairro:</label>
+            <input id="bairro" name="pessoa.Bairro" />
+
+            <label for="numeroLogradouro">Numero Logradouro:</label>
+            <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" />
+
+            <label for="complemento">Complemento:</label>
+            <input id="complemento" name="pessoa.Complemento" />
+
+            <label for="cnpj">CNPJ:</label>
+            <input id="cnpj" name="pessoa.CNPJ" />
+
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="pessoa.Sexo">
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
+
+            <label for="produtos">Produtos:</label>
+            <input id="produtos" name="pessoa.Produtos" />
+
+            <label for="preco">Preco:</label>
+            <input id="preco" name="pessoa.Preco" />
+
+            <input type="submit" />
+        </form>
+    </div>
+</body>
+</html>

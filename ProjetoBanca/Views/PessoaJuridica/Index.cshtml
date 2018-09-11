@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Rua</th>
+                    <th>Bairro</th>
+                    <th>Numero logradouro</th>
+                    <th>Complemento</th>
+                    <th>CNPJ</th>
+                    <th>Produto</th>
+                    <th>Preco</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var pessoa in ViewBag.PessoaJuridica)
+                {
+                    <tr>
+                        <td>@pessoa.ID</td>
+                        <td>@pessoa.Nome</td>
+                        <td>@pessoa.Rua</td>
+                        <td>@pessoa.Bairro</td>
+                        <td>@pessoa.NumeroLogradouro</td>
+                        <td>@pessoa.Complemento</td>
+                        <td>@pessoa.CNPJ</td>
+                        <td>@pessoa.Produtos</td>
+                        <td>@pessoa.Preco</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
