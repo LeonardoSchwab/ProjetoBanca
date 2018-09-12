@@ -11,5 +11,10 @@ namespace ProjetoBanca.Models
         public string Descricao{ get; private set; }
         public double Desconto{ get; private set; }
         public IList<Produto> Produtos{ get; set; }
+
+        public Promocao()
+        {
+            this.Produtos = new List<Produto>();
+        }
     }
 }

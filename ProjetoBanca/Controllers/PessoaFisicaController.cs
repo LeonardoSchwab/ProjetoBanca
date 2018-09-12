@@ -1,4 +1,5 @@
 ﻿using ProjetoBanca.DAO;
+using ProjetoBanca.Filtros;
 using ProjetoBanca.Models;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
+    [AutorizacaoFilter]
     public class PessoaFisicaController : Controller
     {
         // GET: PessoaFisica

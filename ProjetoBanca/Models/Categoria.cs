@@ -9,5 +9,6 @@ namespace ProjetoBanca.Models
     {
         public int ID{ get; private set; }
         public string Nome { get; private set; }
+        public IList<Produto> Produtos { get; private set; }
     }
 }

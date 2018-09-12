@@ -10,5 +10,10 @@ namespace ProjetoBanca.Models
         public string CNPJ{ get; private set; }
         public IList<Produto> Produtos { get; private set; }
         public int Preco { get; private set; }
+
+        public PessoaJuridica()
+        {
+            this.Produtos = new List<Produto>();
+        }
     }
 }

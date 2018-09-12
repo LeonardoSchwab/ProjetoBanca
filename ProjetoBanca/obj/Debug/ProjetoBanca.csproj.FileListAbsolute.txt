@@ -1,0 +1,3 @@
+C:\Users\m012\source\repos\Projeto\ProjetoBanca\obj\Debug\ProjetoBanca.csprojAssemblyReference.cache
+C:\Users\m012\source\repos\Projeto\ProjetoBanca\obj\Debug\ProjetoBanca.dll.config
+C:\Users\m012\source\repos\Projeto\ProjetoBanca\obj\Debug\ProjetoBanca.csproj.CoreCompileInputs.cache

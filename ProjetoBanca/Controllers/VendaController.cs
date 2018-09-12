@@ -1,4 +1,5 @@
 ﻿using ProjetoBanca.DAO;
+using ProjetoBanca.Filtros;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace ProjetoBanca.Controllers
 {
     public class VendaController : Controller
     {
+        [AutorizacaoFilter]
         // GET: Venda
         public ActionResult Index()
         {
