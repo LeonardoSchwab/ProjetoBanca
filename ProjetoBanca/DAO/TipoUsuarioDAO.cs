@@ -33,7 +33,7 @@ namespace ProjetoBanca.DAO
                 context.SaveChanges();
             }
         }
-        public IList<Produto> Lista()
+        public IList<TipoUsuario> Lista()
         {
             using (var context = new ProjetoContext())
             {
