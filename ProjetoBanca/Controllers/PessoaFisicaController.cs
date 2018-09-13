@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
-    [AutorizacaoFilter]
+    //[AutorizacaoFilter]
     public class PessoaFisicaController : Controller
     {
         // GET: PessoaFisica

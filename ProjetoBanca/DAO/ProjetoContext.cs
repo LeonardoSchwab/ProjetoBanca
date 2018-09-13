@@ -19,7 +19,7 @@ namespace ProjetoBanca.DAO
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ProdutoVendas>().HasKey(pv => new { pv.ProdutoID, pv.VendasID });
+            modelBuilder.Entity<ProdutoVendas>().HasKey(pv => new { pv.ProdutoID, pv.VendaID });
             base.OnModelCreating(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

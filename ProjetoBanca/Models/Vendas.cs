@@ -10,7 +10,7 @@ namespace ProjetoBanca.Models
         public int ID { get; private set; }
         public IList<ProdutoVendas> Produtos{ get; private set; }
         public double PrecoUnitario{ get; private set; }
-        public double PrecoTotal{ get; private set; }
+        public double PrecoTotal{ get; set; }
         public int Quantidade{ get; private set; }
 
         public Vendas()

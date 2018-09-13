@@ -310,10 +310,10 @@
     <Content Include="Views\TipoUsuario\Form.cshtml" />
     <Content Include="Views\Venda\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Venda\Venda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

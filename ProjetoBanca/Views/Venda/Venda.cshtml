@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Venda</title>
+</head>
+<body>
+    <div> 
+        <table>
+            <thead>
+                <tr>
+                    <th>ID da venda</th>
+                    <th>Produto</th>
+                    <th>PreçoUnitario</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <br/>
+
+        <form>
+            <label for="produto">Produto:</label>
+            <input id="produto" name="venda.Produto" />
+
+            <label for="precoUnitario">Preço unitário:</label>
+            <input id="precoUnitario" name="venda.PrecoUnitario" />
+
+            <label for="quantidade">Quantidade:</label>
+            <input id="quantidade" name="venda.Quantidade" />
+
+            <input type="submit" />
+
+            <br />
+            <br />
+            <br />
+
+            <label for="precoTotal">Preço total:</label>
+            <input id="precoTotal" name="venda.PrecoTotal" disabled/>
+        </form>
+    </div>
+</body>
+</html>

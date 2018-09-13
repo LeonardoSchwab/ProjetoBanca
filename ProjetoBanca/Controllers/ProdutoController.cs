@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
-    [AutorizacaoFilter]
+    //[AutorizacaoFilter]
     public class ProdutoController : Controller
     {
         // GET: Produto
@@ -34,6 +34,6 @@ namespace ProjetoBanca.Controllers
             var dao = new ProdutoDAO();
             dao.Adicionar(produto);
             return RedirectToAction("Index");
-        }
+        }       
     }
 }
