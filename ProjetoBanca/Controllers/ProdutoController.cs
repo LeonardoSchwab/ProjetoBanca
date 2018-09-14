@@ -26,6 +26,15 @@ namespace ProjetoBanca.Controllers
             var categoriaDAO = new CategoriaDAO();
             var categorias = categoriaDAO.Lista();
             ViewBag.Categoria = categorias;
+
+            var fornecedorDAO = new PessoaJuridicaDAO();
+            var fornecedores = fornecedorDAO.Lista();
+            ViewBag.Fornecedor = fornecedores;
+
+            var promocaoDAO = new PromocaoDAO();
+            var promocoes = promocaoDAO.Lista();
+            ViewBag.Promocao = promocoes;
+
             return View();            
         }
 
@@ -34,6 +43,13 @@ namespace ProjetoBanca.Controllers
             var dao = new ProdutoDAO();
             dao.Adicionar(produto);
             return RedirectToAction("Index");
-        }       
+        }
+
+        public ActionResult Remove(Produto produto)
+        {
+            var dao = new ProdutoDAO();
+            dao.Remover(produto);
+            return RedirectToAction("Index");
+        }
     }
 }

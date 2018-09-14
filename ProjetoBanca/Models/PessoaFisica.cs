@@ -10,7 +10,7 @@ namespace ProjetoBanca.Models
         public string CPF { get; private set; }
         public char Sexo { get; private set; }
         public string DataNascimento { get; private set; }
-        public int TipoID { get; private set; }
+        public int TipoID { get; set; }
         public TipoUsuario Tipo { get; private set; }
         public int Pontos { get; private set; }
     }

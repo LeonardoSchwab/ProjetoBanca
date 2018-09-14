@@ -7,8 +7,8 @@ namespace ProjetoBanca.Models
 {
     public class Categoria
     {
-        public int ID{ get; private set; }
-        public string Nome { get; private set; }
+        public int ID{ get; set; }
+        public string Nome { get; set; }
         public IList<Produto> Produtos { get; private set; }
     }
 }

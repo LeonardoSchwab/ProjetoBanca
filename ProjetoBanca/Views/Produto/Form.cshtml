@@ -23,13 +23,29 @@
 
             <label for="unidade">Unidade:</label>
             <input id="unidade" name="produto.Unidade" />
-            
+
             <label for="categoria">Categoria:</label>
-            <select id="categoria" name="produto.CategoriaID" >
-            @foreach (var categoria in ViewBag.Categoria)
-            {
-                <option value="@categoria.ID">@categoria.Nome</option>
-            }
+            <select id="categoria" name="produto.CategoriaID">
+                @foreach (var categoria in ViewBag.Categoria)
+                {
+                    <option value="@categoria.ID">@categoria.Nome</option>
+                }
+            </select>
+
+            <label for="fornecedor">Fornecedor:</label>
+            <select id="fornecedor" name="produto.FornecedorID">
+                @foreach (var fornecedor in ViewBag.Fornecedor)
+                {
+                    <option value="@fornecedor.ID">@fornecedor.Nome</option>
+                }
+            </select>
+
+            <label for="promocao">Promoção:</label>
+            <select id="promocao" name="produto.PromocaoID">
+                @foreach (var promocao in ViewBag.Promocao)
+                {
+                    <option value="@promocao.ID" selected="">@promocao.Descricao</option>
+                }
             </select>
 
             <input type="submit" />

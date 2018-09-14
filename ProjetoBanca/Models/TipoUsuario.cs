@@ -8,7 +8,7 @@ namespace ProjetoBanca.Models
     public class TipoUsuario
     {
         public int ID{ get; private set; }
-        public string Nome { get; private set; }
+        public string Nome { get; set; }
         public IList<PessoaFisica> Usuarios{ get; private set; }
 
         public TipoUsuario()

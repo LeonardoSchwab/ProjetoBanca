@@ -33,5 +33,12 @@ namespace ProjetoBanca.Controllers
             pessoaFisicaDAO.Adicionar(pessoa);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Remove(PessoaFisica pessoa)
+        {
+            var pessoaFisicaDAO = new PessoaFisicaDAO();
+            pessoaFisicaDAO.Remover(pessoa);
+            return RedirectToAction("Index");
+        }
     }
 }

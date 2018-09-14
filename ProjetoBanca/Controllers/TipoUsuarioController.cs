@@ -30,5 +30,12 @@ namespace ProjetoBanca.Controllers
             tipoDAO.Adicionar(tipo);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Remove(TipoUsuario tipo)
+        {
+            var tipoDAO = new TipoUsuarioDAO();
+            tipoDAO.Remover(tipo);
+            return RedirectToAction("Index");
+        }
     }
 }

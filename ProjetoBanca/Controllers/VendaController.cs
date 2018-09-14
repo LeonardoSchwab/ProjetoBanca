@@ -28,6 +28,14 @@ namespace ProjetoBanca.Controllers
         {
             venda.PrecoTotal = precoTotal;
             var vendasDAO = new VendasDAO();
+            vendasDAO.Adicionar(venda);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Remove(Vendas venda, double precoTotal)
+        {            
+            var vendasDAO = new VendasDAO();
+            vendasDAO.Remover(venda);
             return RedirectToAction("Index");
         }
     }

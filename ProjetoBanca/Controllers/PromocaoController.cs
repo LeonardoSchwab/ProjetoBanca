@@ -35,5 +35,12 @@ namespace ProjetoBanca.Controllers
             promocaoDAO.Adicionar(promocao);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Remove(Promocao promocao)
+        {
+            var promocaoDAO = new PromocaoDAO();
+            promocaoDAO.Remover(promocao);
+            return RedirectToAction("Index");
+        }
     }
 }

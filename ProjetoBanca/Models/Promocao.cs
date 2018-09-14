@@ -8,8 +8,8 @@ namespace ProjetoBanca.Models
     public class Promocao
     {
         public int ID{ get; private set; }
-        public string Descricao{ get; private set; }
-        public double Desconto{ get; private set; }
+        public string Descricao{ get; set; }
+        public double Desconto{ get; set; }
         public IList<Produto> Produtos{ get; set; }
 
         public Promocao()
