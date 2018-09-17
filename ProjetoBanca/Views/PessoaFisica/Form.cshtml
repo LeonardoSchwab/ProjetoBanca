@@ -40,7 +40,7 @@
             <input id="dataNascimento" name="pessoa.DataNascimento" />
                         
             <label for="tipo">Tipo:</label>
-            <select id="tipo" name="pessoa.Tipo">
+            <select id="tipo" name="pessoa.TipoID">
                 @foreach (var tipo in ViewBag.TipoUsuario)
                 {
                     <option value="@tipo.ID">@tipo.Nome</option>

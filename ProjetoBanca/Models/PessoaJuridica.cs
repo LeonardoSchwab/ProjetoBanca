@@ -7,9 +7,9 @@ namespace ProjetoBanca.Models
 {
     public class PessoaJuridica : Pessoa
     {
-        public string CNPJ{ get; private set; }
+        public string CNPJ{ get; set; }
         public IList<Produto> Produtos { get; private set; }
-        public int Preco { get; private set; }
+        public int Preco { get; set; }
 
         public PessoaJuridica()
         {

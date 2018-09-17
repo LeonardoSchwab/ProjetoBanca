@@ -24,15 +24,13 @@ namespace ProjetoBanca.Controllers
         {
             return View();
         }
-        public ActionResult Adiciona(Vendas venda, double precoTotal)
+        public ActionResult Adiciona(Vendas venda)
         {
-            venda.PrecoTotal = precoTotal;
             var vendasDAO = new VendasDAO();
             vendasDAO.Adicionar(venda);
             return RedirectToAction("Index");
         }
-
-        public ActionResult Remove(Vendas venda, double precoTotal)
+        public ActionResult Remove(Vendas venda)
         {            
             var vendasDAO = new VendasDAO();
             vendasDAO.Remover(venda);
