@@ -12,12 +12,39 @@
 </head>
 <body>
     <div>
-        <form action="/Categoria/Adiciona" method="post">
+        <form action="/Categoria/Adiciona" method="post" id="form-categoria">
             <label for="nome">Nome:</label>
             <input id="nome" name="categoria.Nome" />
             
-            <input type="submit" />
+            <input type="submit" id="salvar-categoria"/>
         </form>
     </div>
+
+
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            console.log("AAAA");
+            $("#salvar-categoria").click(function (event) {
+                event.preventDefault();
+
+                var nome = $("#nome").val();
+                var dados = { Nome: nome };
+
+                //$("#form-categoria").serialize()
+
+                $.post("http://localhost:62680/Categoria/Adiciona", dados, function (data) {
+                    console.log("SUCESSO!");
+                }).fail(function () {
+                    console.log("FALHA!");
+                });
+
+            });
+
+        });
+    </script>
+
 </body>
 </html>
