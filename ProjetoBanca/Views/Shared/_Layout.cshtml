@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,18 +21,26 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Produto", "Index", "Produto")</li>
+                    <li>@Html.ActionLink("Cadastro produto", "Form", "Produto")</li>
+                    <li>@Html.ActionLink("Categoria", "Index", "Categoria")</li>
+                    <li>@Html.ActionLink("Cadastro categoria", "Form", "Categoria")</li>
+                    <li>@Html.ActionLink("Pessoa Fisica", "Index", "PessoaFisica")</li>
+                    <li>@Html.ActionLink("Cadastro pessoa fisica", "Form", "PessoaFisica")</li>
+                    <li>@Html.ActionLink("Pessoa Juridica", "Index", "PessoaJuridica")</li>
+                    <li>@Html.ActionLink("Cadastro pessoa juridica", "Form", "PessoaJuridica")</li>
+                    <li>@Html.ActionLink("Promocao", "Index", "Promocao")</li>
+                    <li>@Html.ActionLink("Cadastro promocao", "Form", "Promocao")</li>
+                    <li>@Html.ActionLink("Tipo de usuario", "Index", "TipoUsuario")</li>
+                    <li>@Html.ActionLink("Cadastro tipo de usuario", "Form", "TipoUsuario")</li>
+                    <li>@Html.ActionLink("Venda", "Index", "Venda")</li>
+                    <li>@Html.ActionLink("Cadastro venda", "Venda", "Venda")</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

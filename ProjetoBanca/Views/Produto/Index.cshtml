@@ -1,39 +1,37 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Unidade</th>
+            <th>Quantidade</th>
+            <th>Categoria</th>
+            <th>Fornecedor</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in ViewBag.Produto)
+        {
+            <tr>
+                <td class="id">@produto.ID</td>
+                <td class="nome">@produto.Nome</td>
+                <td class="preco">@produto.Preco</td>
+                <td class="unidade">@produto.Unidade</td>
+                <td class="quantidade">@produto.Quantidade</td>
+                <td class="categoria">@produto.CategoriaID</td>
+                <td class="fornecedor">@produto.FornecedorID</td>
+                <td><a class="botao-remover" href="#">D</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Unidade</th>
-                    <th>Quantidade</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var produto in ViewBag.Produto)
-                {
-                    <tr>
-                        <td>@produto.ID</td>
-                        <td>@produto.Nome</td>
-                        <td>@produto.Preco</td>
-                        <td>@produto.Unidade</td>
-                        <td>@produto.Quantidade</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/Meus scripts/Scripts-produto/main.js"></script>
+    

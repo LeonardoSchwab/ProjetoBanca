@@ -7,7 +7,7 @@ namespace ProjetoBanca.Models
 {
     public abstract class Pessoa
     {
-        public int ID{ get; private set; }
+        public int ID{ get; set; }
         public string Nome{ get; set; }      
         public string Bairro{ get; set; }
         public string Rua { get; set; }

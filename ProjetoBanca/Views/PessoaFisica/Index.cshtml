@@ -1,52 +1,46 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Rua</th>
+            <th>Bairro</th>
+            <th>Numero logradouro</th>
+            <th>Complemento</th>
+            <th>CPF</th>
+            <th>Sexo</th>
+            <th>Data nascimento</th>
+            <th>Tipo de usúario</th>
+            <th>Pontos</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pessoa in ViewBag.PessoaFisica)
+        {
+            <tr>
+                <td class="id">@pessoa.ID</td>
+                <td class="nome">@pessoa.Nome</td>
+                <td class="rua">@pessoa.Rua</td>
+                <td class="bairro">@pessoa.Bairro</td>
+                <td class="numeroLogradouro">@pessoa.NumeroLogradouro</td>
+                <td class="complemento">@pessoa.Complemento</td>
+                <td class="cpf">@pessoa.CPF</td>
+                <td class="sexo">@pessoa.Sexo</td>
+                <td class="dataNascimento">@pessoa.DataNascimento</td>
+                <td class="tipo">@pessoa.TipoID</td>
+                <td class="pontos">@pessoa.Pontos</td>
+                <td><a class="botao-remover" href="#">D</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Rua</th>
-                    <th>Bairro</th>
-                    <th>Numero logradouro</th>
-                    <th>Complemento</th>
-                    <th>CPF</th>
-                    <th>Sexo</th>
-                    <th>Data nascimento</th>
-                    <th>Tipo de usúario</th>
-                    <th>Pontos</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var pessoa in ViewBag.PessoaFisica)
-                {
-                    <tr>
-                        <td>@pessoa.ID</td>
-                        <td>@pessoa.Nome</td>
-                        <td>@pessoa.Rua</td>
-                        <td>@pessoa.Bairro</td>
-                        <td>@pessoa.NumeroLogradouro</td>
-                        <td>@pessoa.Complemento</td>
-                        <td>@pessoa.CPF</td>
-                        <td>@pessoa.Sexo</td>
-                        <td>@pessoa.DataNascimento</td>
-                        <td>@pessoa.Tipo</td>
-                        <td>@pessoa.Pontos</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/Meus scripts/Scripts-pessoaFisica/main.js"></script>
+    

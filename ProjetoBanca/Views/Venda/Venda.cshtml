@@ -1,53 +1,46 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID da venda</th>
+            <th>Produto</th>
+            <th>PreçoUnitario</th>
+            <th>Quantidade</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Venda</title>
-</head>
-<body>
-    <div> 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID da venda</th>
-                    <th>Produto</th>
-                    <th>PreçoUnitario</th>
-                    <th>Quantidade</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+<br />
 
-                </tr>
-            </tbody>
-        </table>
+<form>
+    <select>
+        @foreach (var produto in ViewBag.Produto)
+        {
+            <option value=@produto.ID id="produto">@produto.Nome</option>
+        }
+    </select>
 
-        <br/>
+    <label for="precoUnitario">Preço unitário:</label>
+    <input id="precoUnitario" name="venda.PrecoUnitario" />
 
-        <form>
-            <label for="produto">Produto:</label>
-            <input id="produto" name="venda.Produto" />
+    <label for="quantidade">Quantidade:</label>
+    <input id="quantidade" name="venda.Quantidade" />
 
-            <label for="precoUnitario">Preço unitário:</label>
-            <input id="precoUnitario" name="venda.PrecoUnitario" />
+    <input type="submit" id="enviar-carrinho" value="Enviar pro carrinho"/>
 
-            <label for="quantidade">Quantidade:</label>
-            <input id="quantidade" name="venda.Quantidade" />
+    <br />
+    <br />
+    <br />
 
-            <input type="submit" />
+    <label for="precoTotal">Preço total:</label>
+    <input id="precoTotal" name="venda.PrecoTotal" disabled />
+</form>
 
-            <br />
-            <br />
-            <br />
-
-            <label for="precoTotal">Preço total:</label>
-            <input id="precoTotal" name="venda.PrecoTotal" disabled/>
-        </form>
-    </div>
-</body>
-</html>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/Meus scripts/Scripts-venda/main.js"></script>

@@ -250,6 +250,10 @@
     <Compile Include="Migrations\20180914110029_Inicial.designer.cs">
       <DependentUpon>20180914110029_Inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20180919222112_PromocaoID.cs" />
+    <Compile Include="Migrations\20180919222112_PromocaoID.designer.cs">
+      <DependentUpon>20180919222112_PromocaoID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ProjetoContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Pessoa.cs" />
@@ -286,6 +290,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Meus scripts\Scripts-categoria\main.js" />
+    <Content Include="Scripts\Meus scripts\Scripts-pessoaFisica\main.js" />
+    <Content Include="Scripts\Meus scripts\Scripts-pessoaJuridica\main.js" />
+    <Content Include="Scripts\Meus scripts\Scripts-produto\main.js" />
+    <Content Include="Scripts\Meus scripts\Scripts-tipoUsuario\main.js" />
+    <Content Include="Scripts\Meus scripts\Scripts-venda\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

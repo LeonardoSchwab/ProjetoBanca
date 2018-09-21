@@ -1,38 +1,26 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Descrição</th>
-                    <th>Desconto</th>
-                    <th>Produto</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var promocao in ViewBag.Promocao)
-                {
-                    <tr>
-                        <td>@promocao.ID</td>
-                        <td>@promocao.Descricao</td>
-                        <td>@promocao.Desconto</td>
-                        <td>@promocao.Produtos</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Descrição</th>
+            <th>Desconto</th>
+            <th>Produto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var promocao in ViewBag.Promocao)
+        {
+            <tr>
+                <td class="id">@promocao.ID</td>
+                <td class="descricao">@promocao.Descricao</td>
+                <td class="desconto">@promocao.Desconto</td>                
+            </tr>
+        }
+    </tbody>
+</table>
+    

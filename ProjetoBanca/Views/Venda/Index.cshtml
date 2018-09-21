@@ -1,40 +1,35 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Produtos</th>
+            <th>Preço unitário</th>
+            <th>Preço total</th>
+            <th>Quantidade</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venda in ViewBag.Venda)
+        {
+            <tr>
+                <td>@venda.ID</td>
+                <td>@venda.Nome</td>
+                <td>@venda.PrecoUnitario</td>
+                <td>@venda.PrecoTotal</td>
+                <td>@venda.Quantidade</td>
+                <td><a class="botao-remover" href="#">D</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Produtos</th>
-                    <th>Preço unitário</th>
-                    <th>Preço total</th>
-                    <th>Quantidade</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var venda in ViewBag.Venda)
-                {
-                    <tr>
-                        <td>@venda.ID</td>
-                        <td>@venda.Nome</td>
-                        <td>@venda.PrecoUnitario</td>
-                        <td>@venda.PrecoTotal</td>
-                        <td>@venda.Quantidade</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<!--
+    <script src="~/Scripts/Meus scripts/Scripts-venda"></script>
+-->

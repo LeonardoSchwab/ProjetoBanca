@@ -1,54 +1,44 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Form</title>
-</head>
-<body>
-    <div>
-        <form action="/PessoaFisica/Adiciona" method="post">
-            <label for="nome">Nome:</label>
-            <input id="nome" name="pessoa.Nome" />
+<form action="/PessoaFisica/Adiciona" method="post">
+    <label for="nome">Nome:</label>
+    <input id="nome" name="pessoa.Nome" />
 
-            <label for="rua">Rua:</label>
-            <input id="rua" name="pessoa.Rua" />
+    <label for="rua">Rua:</label>
+    <input id="rua" name="pessoa.Rua" />
 
-            <label for="bairro">Bairro:</label>
-            <input id="bairro" name="pessoa.Bairro" />
+    <label for="bairro">Bairro:</label>
+    <input id="bairro" name="pessoa.Bairro" />
 
-            <label for="numeroLogradouro">Numero Logradouro:</label>
-            <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" />
+    <label for="numeroLogradouro">Numero Logradouro:</label>
+    <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" />
 
-            <label for="complemento">Complemento:</label>
-            <input id="complemento" name="pessoa.Complemento" />
+    <label for="complemento">Complemento:</label>
+    <input id="complemento" name="pessoa.Complemento" />
 
-            <label for="cpf">CPF:</label>
-            <input id="cpf" name="pessoa.CPF" />
+    <label for="cpf">CPF:</label>
+    <input id="cpf" name="pessoa.CPF" />
 
-            <label for="sexo">Sexo:</label>
-            <select id="sexo" name="pessoa.Sexo" >
-                <option value="M">M</option>
-                <option value="F">F</option>
-            </select>
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" name="pessoa.Sexo" >
+        <option value="M">M</option>
+        <option value="F">F</option>
+    </select>
 
-            <label for="dataNascimento">Data de nascimento:</label>
-            <input id="dataNascimento" name="pessoa.DataNascimento" />
+    <label for="dataNascimento">Data de nascimento:</label>
+    <input id="dataNascimento" name="pessoa.DataNascimento" />
                         
-            <label for="tipo">Tipo:</label>
-            <select id="tipo" name="pessoa.TipoID">
-                @foreach (var tipo in ViewBag.TipoUsuario)
-                {
-                    <option value="@tipo.ID">@tipo.Nome</option>
-                }
-            </select>
+    <label for="tipo">Tipo:</label>
+    <select id="tipo" name="pessoa.TipoID">
+        @foreach (var tipo in ViewBag.TipoUsuario)
+        {
+            <option value="@tipo.ID">@tipo.Nome</option>
+        }
+    </select>
 
-            <input type="submit" />
-        </form>
-    </div>
-</body>
-</html>
+    <input type="submit" />
+</form>
+    

@@ -1,58 +1,28 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoria in ViewBag.Categoria)
+        {
+            <tr>
+                <td class="id">@categoria.ID</td>
+                <td class="nome">@categoria.Nome</td>
+                <td><a class="botao-remover" href="#">D</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Remover</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var categoria in ViewBag.Categoria)
-                {
-                    <tr>
-                        <td class="id">@categoria.ID</td>
-                        <td class="nome">@categoria.Nome</td>
-                        <td><a class="botao-remover" href="#">D</a></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/Meus scripts/Scripts-categoria/main.js"></script>
 
-    <script src="~/Scripts/jquery-3.3.1.js"></script>
-    <script>
-        $(".botao-remover").click(function () {
-            var linha = $(this).parent().parent();
-            linha.remove();
-
-            var id = $(this).parent(".id").val();
-            var nome = $(this).parent(".nome").val();
-
-            var dados = { ID: id, Nome: nome };
-
-            console.log(dados);
-
-            /*$.post("http://localhost:62680/Categoria/Remove", dados, function () {
-                console.log("Sucesso!");
-            }).fail(function () {
-                console.log("Falha!");
-            });*/
-        });
-    </script>
-
-</body>
-</html>
