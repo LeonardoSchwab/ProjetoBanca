@@ -9,7 +9,7 @@ using ProjetoBanca.DAO;
 namespace ProjetoBanca.Migrations
 {
     [DbContext(typeof(ProjetoContext))]
-    [Migration("20180919222112_PromocaoID")]
+    [Migration("20180921113536_PromocaoID")]
     partial class PromocaoID
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

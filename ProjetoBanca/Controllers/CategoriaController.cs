@@ -23,19 +23,23 @@ namespace ProjetoBanca.Controllers
         public ActionResult Form()
         {
             return View();
-        }
+        }        
         public ActionResult Adiciona(Categoria categoria)
-        {
+        {            
             var categoriaDAO = new CategoriaDAO();
             categoriaDAO.Adicionar(categoria);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index");            
         }
-
         public ActionResult Remove(Categoria categoria)
         {
             var categoriaDAO = new CategoriaDAO();
             categoriaDAO.Remover(categoria);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Edita(Categoria categoria)
+        {
+            return View(categoria);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace ProjetoBanca.Models
         public int Quantidade { get; set; }
         public int CategoriaID { get; set; }
         public Categoria Categoria { get; private set; }
+        //public int PromocaoID { get; set; }
         public Promocao Promocao{ get; private set; }
         public int FornecedorID { get; set; }
         public PessoaJuridica Fornecedor { get; private set; }

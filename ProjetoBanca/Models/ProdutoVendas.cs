@@ -7,6 +7,7 @@ namespace ProjetoBanca.Models
 {
     public class ProdutoVendas
     {
+        public int ID { get; set; }
         public int ProdutoID { get; set; }
         public int VendaID { get; set; }
         public Produto Produto { get; private set; }

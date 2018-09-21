@@ -246,13 +246,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20180914110029_Inicial.cs" />
-    <Compile Include="Migrations\20180914110029_Inicial.designer.cs">
-      <DependentUpon>20180914110029_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\20180921113010_Inicial.cs" />
+    <Compile Include="Migrations\20180921113010_Inicial.designer.cs">
+      <DependentUpon>20180921113010_Inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20180919222112_PromocaoID.cs" />
-    <Compile Include="Migrations\20180919222112_PromocaoID.designer.cs">
-      <DependentUpon>20180919222112_PromocaoID.cs</DependentUpon>
+    <Compile Include="Migrations\20180921113536_PromocaoID.cs" />
+    <Compile Include="Migrations\20180921113536_PromocaoID.designer.cs">
+      <DependentUpon>20180921113536_PromocaoID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ProjetoContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />

@@ -9,7 +9,7 @@ using ProjetoBanca.DAO;
 namespace ProjetoBanca.Migrations
 {
     [DbContext(typeof(ProjetoContext))]
-    [Migration("20180914110029_Inicial")]
+    [Migration("20180921113010_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
