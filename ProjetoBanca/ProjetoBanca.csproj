@@ -238,6 +238,7 @@
     <Compile Include="DAO\PessoaFisicaDAO.cs" />
     <Compile Include="DAO\PessoaJuridicaDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="DAO\ProdutoVendasDAO.cs" />
     <Compile Include="DAO\ProjetoContext.cs" />
     <Compile Include="DAO\PromocaoDAO.cs" />
     <Compile Include="DAO\TipoUsuarioDAO.cs" />
@@ -246,13 +247,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20180921113010_Inicial.cs" />
-    <Compile Include="Migrations\20180921113010_Inicial.designer.cs">
-      <DependentUpon>20180921113010_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\20180923193311_Inicial.cs" />
+    <Compile Include="Migrations\20180923193311_Inicial.designer.cs">
+      <DependentUpon>20180923193311_Inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20180921113536_PromocaoID.cs" />
-    <Compile Include="Migrations\20180921113536_PromocaoID.designer.cs">
-      <DependentUpon>20180921113536_PromocaoID.cs</DependentUpon>
+    <Compile Include="Migrations\20180923205615_precoUniVendas.cs" />
+    <Compile Include="Migrations\20180923205615_precoUniVendas.designer.cs">
+      <DependentUpon>20180923205615_precoUniVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ProjetoContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />

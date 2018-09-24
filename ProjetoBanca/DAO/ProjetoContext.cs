@@ -16,12 +16,8 @@ namespace ProjetoBanca.DAO
         public DbSet<Promocao> Promocao{ get; private set; }
         public DbSet<Vendas> Vendas{ get; private set; }
         public DbSet<TipoUsuario> TipoUsuario{ get; private set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<ProdutoVendas>().HasKey(pv => new { pv.ProdutoID, pv.VendaID });
-            base.OnModelCreating(modelBuilder);
-        }
+        public DbSet<ProdutoVendas> ProdutoVendas { get; private set; }
+                
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ProjetoDB;Trusted_Connection=true;");

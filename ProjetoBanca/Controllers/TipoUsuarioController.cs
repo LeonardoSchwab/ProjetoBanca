@@ -31,9 +31,10 @@ namespace ProjetoBanca.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Remove(TipoUsuario tipo)
+        public ActionResult Remove(int id)
         {
             var tipoDAO = new TipoUsuarioDAO();
+            var tipo = tipoDAO.Buscar(id);
             tipoDAO.Remover(tipo);
             return RedirectToAction("Index");
         }

@@ -7,8 +7,6 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Produtos</th>
-            <th>Preço unitário</th>
             <th>Preço total</th>
             <th>Quantidade</th>
             <th>Remover</th>
@@ -18,11 +16,9 @@
         @foreach (var venda in ViewBag.Venda)
         {
             <tr>
-                <td>@venda.ID</td>
-                <td>@venda.Nome</td>
-                <td>@venda.PrecoUnitario</td>
-                <td>@venda.PrecoTotal</td>
-                <td>@venda.Quantidade</td>
+                <td class="id">@venda.ID</td>
+                <td class="precoTotal">@venda.PrecoTotal</td>
+                <td class="quantidade">@venda.Quantidade</td>
                 <td><a class="botao-remover" href="#">D</a></td>
             </tr>
         }
@@ -30,6 +26,5 @@
 </table>
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>
-<!--
-    <script src="~/Scripts/Meus scripts/Scripts-venda"></script>
--->
+<script src="~/Scripts/Meus scripts/Scripts-venda/main.js"></script>
+

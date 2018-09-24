@@ -40,5 +40,12 @@ namespace ProjetoBanca.DAO
                 return context.Produto.ToList();
             }
         }
+        public Produto Buscar(int id)
+        {
+            using (var context = new ProjetoContext())
+            {
+                return context.Produto.Find(id);
+            }
+        }
     }
 }

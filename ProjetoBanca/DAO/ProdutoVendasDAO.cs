@@ -6,46 +6,52 @@ using System.Web;
 
 namespace ProjetoBanca.DAO
 {
-    public class TipoUsuarioDAO
+    public class ProdutoVendasDAO
     {
-        public void Adicionar(TipoUsuario tipo)
+        public void Adicionar(ProdutoVendas pv)
         {
             using (var context = new ProjetoContext())
             {
-                context.TipoUsuario.Add(tipo);
+                context.ProdutoVendas.Add(pv);
                 context.SaveChanges();
             }
         }
 
-        public void Remover(TipoUsuario tipo)
+        public void Remover(ProdutoVendas pv)
         {
             using (var context = new ProjetoContext())
             {
-                context.TipoUsuario.Remove(tipo);
+                context.ProdutoVendas.Remove(pv);
                 context.SaveChanges();
             }
         }
-        public void Atualizar(TipoUsuario tipo)
+        public void Atualizar(ProdutoVendas pv)
         {
             using (var context = new ProjetoContext())
             {
-                context.TipoUsuario.Update(tipo);
+                context.ProdutoVendas.Update(pv);
                 context.SaveChanges();
             }
         }
-        public IList<TipoUsuario> Lista()
+        public IList<ProdutoVendas> Lista()
         {
             using (var context = new ProjetoContext())
             {
-                return context.TipoUsuario.ToList();
+                return context.ProdutoVendas.ToList();
             }
         }
-        public TipoUsuario Buscar(int id)
+        public ProdutoVendas Buscar(int id)
         {
             using (var context = new ProjetoContext())
             {
-                return context.TipoUsuario.Find(id);
+                return context.ProdutoVendas.Find(id);
             }
+        }
+        public int IdUltimaVenda()
+        {
+            var vendasDAO = new VendasDAO();
+            var vendas = vendasDAO.Lista();
+            return vendas.Last().ID;
         }
     }
 }

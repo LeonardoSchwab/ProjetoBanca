@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProjetoBanca.Migrations
@@ -40,20 +41,6 @@ namespace ProjetoBanca.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Promocao",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Descricao = table.Column<string>(nullable: true),
-                    Desconto = table.Column<double>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Promocao", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "TipoUsuario",
                 columns: table => new
                 {
@@ -74,7 +61,8 @@ namespace ProjetoBanca.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     PrecoUnitario = table.Column<double>(nullable: false),
                     PrecoTotal = table.Column<double>(nullable: false),
-                    Quantidade = table.Column<int>(nullable: false)
+                    Quantidade = table.Column<int>(nullable: false),
+                    Data = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -92,7 +80,6 @@ namespace ProjetoBanca.Migrations
                     Unidade = table.Column<string>(nullable: true),
                     Quantidade = table.Column<int>(nullable: false),
                     CategoriaID = table.Column<int>(nullable: false),
-                    PromocaoID = table.Column<int>(nullable: false),
                     FornecedorID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -108,12 +95,6 @@ namespace ProjetoBanca.Migrations
                         name: "FK_Produto_PessoaJuridica_FornecedorID",
                         column: x => x.FornecedorID,
                         principalTable: "PessoaJuridica",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Produto_Promocao_PromocaoID",
-                        column: x => x.PromocaoID,
-                        principalTable: "Promocao",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -150,12 +131,14 @@ namespace ProjetoBanca.Migrations
                 name: "ProdutoVendas",
                 columns: table => new
                 {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ProdutoID = table.Column<int>(nullable: false),
                     VendaID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProdutoVendas", x => new { x.ProdutoID, x.VendaID });
+                    table.PrimaryKey("PK_ProdutoVendas", x => x.ID);
                     table.ForeignKey(
                         name: "FK_ProdutoVendas_Produto_ProdutoID",
                         column: x => x.ProdutoID,
@@ -166,6 +149,27 @@ namespace ProjetoBanca.Migrations
                         name: "FK_ProdutoVendas_Vendas_VendaID",
                         column: x => x.VendaID,
                         principalTable: "Vendas",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Promocao",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Descricao = table.Column<string>(nullable: true),
+                    Desconto = table.Column<double>(nullable: false),
+                    ProdutoID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Promocao", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Promocao_Produto_ProdutoID",
+                        column: x => x.ProdutoID,
+                        principalTable: "Produto",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -186,14 +190,20 @@ namespace ProjetoBanca.Migrations
                 column: "FornecedorID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Produto_PromocaoID",
-                table: "Produto",
-                column: "PromocaoID");
+                name: "IX_ProdutoVendas_ProdutoID",
+                table: "ProdutoVendas",
+                column: "ProdutoID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProdutoVendas_VendaID",
                 table: "ProdutoVendas",
                 column: "VendaID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Promocao_ProdutoID",
+                table: "Promocao",
+                column: "ProdutoID",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -205,22 +215,22 @@ namespace ProjetoBanca.Migrations
                 name: "ProdutoVendas");
 
             migrationBuilder.DropTable(
+                name: "Promocao");
+
+            migrationBuilder.DropTable(
                 name: "TipoUsuario");
 
             migrationBuilder.DropTable(
-                name: "Produto");
+                name: "Vendas");
 
             migrationBuilder.DropTable(
-                name: "Vendas");
+                name: "Produto");
 
             migrationBuilder.DropTable(
                 name: "Categoria");
 
             migrationBuilder.DropTable(
                 name: "PessoaJuridica");
-
-            migrationBuilder.DropTable(
-                name: "Promocao");
         }
     }
 }

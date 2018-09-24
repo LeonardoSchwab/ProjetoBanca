@@ -2,9 +2,8 @@
     var linha = $(this).parent().parent();
        
     var id = $(this).parent().parent().find(".id").text();
-    var nome = $(this).parent().parent().find(".nome").text();
 
-    var dados = {ID: id, Nome: nome };
+    var dados = {ID: id };
 
     linha.remove();
 

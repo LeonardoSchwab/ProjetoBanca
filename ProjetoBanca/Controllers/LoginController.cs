@@ -14,7 +14,7 @@ namespace ProjetoBanca.Controllers
         {
             return View();
         }
-        public ActionResult Autentica(string cpf, string dataNascimento)
+        /*public ActionResult Autentica(string cpf, string dataNascimento)
         {
             var pessoaFisicaDAO = new PessoaFisicaDAO();
             var usuario = pessoaFisicaDAO.Buscar(cpf, dataNascimento);
@@ -27,6 +27,6 @@ namespace ProjetoBanca.Controllers
             {
                 return RedirectToAction("Index");
             }
-        }
+        }*/
     }
 }

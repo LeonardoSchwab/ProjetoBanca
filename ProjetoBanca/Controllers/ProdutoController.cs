@@ -15,8 +15,8 @@ namespace ProjetoBanca.Controllers
         // GET: Produto
         public ActionResult Index()
         {
-            ProdutoDAO dao = new ProdutoDAO();
-            var produtos = dao.Lista();
+            var produtoDAO = new ProdutoDAO();
+            var produtos = produtoDAO.Lista();
             ViewBag.Produto = produtos;
             return View();
         }
@@ -40,15 +40,16 @@ namespace ProjetoBanca.Controllers
 
         public ActionResult Adiciona(Produto produto)
         {
-            var dao = new ProdutoDAO();
-            dao.Adicionar(produto);
+            var produtoDAO = new ProdutoDAO();
+            produtoDAO.Adicionar(produto);
             return RedirectToAction("Index");
         }
 
-        public ActionResult Remove(Produto produto)
+        public ActionResult Remove(int id)
         {
-            var dao = new ProdutoDAO();
-            dao.Remover(produto);
+            var produtoDAO = new ProdutoDAO();
+            var produto = produtoDAO.Buscar(id);
+            produtoDAO.Remover(produto);
             return RedirectToAction("Index");
         }
     }

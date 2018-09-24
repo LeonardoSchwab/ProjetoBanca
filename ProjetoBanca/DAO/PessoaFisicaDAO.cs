@@ -26,11 +26,6 @@ namespace ProjetoBanca.DAO
             }
         }
 
-        public PessoaFisica Buscar(string cpf, string dataNascimento)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Atualizar(PessoaFisica pessoaFisica)
         {
             using (var context = new ProjetoContext())
@@ -44,6 +39,13 @@ namespace ProjetoBanca.DAO
             using (var context = new ProjetoContext())
             {
                 return context.PessoaFisica.ToList();
+            }
+        }
+        public PessoaFisica Buscar(int id)
+        {
+            using (var context = new ProjetoContext())
+            {
+                return context.PessoaFisica.Find(id);
             }
         }
     }

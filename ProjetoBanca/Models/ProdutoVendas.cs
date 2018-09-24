@@ -12,5 +12,11 @@ namespace ProjetoBanca.Models
         public int VendaID { get; set; }
         public Produto Produto { get; private set; }
         public Vendas Venda { get; private set; }
+
+        public ProdutoVendas(int produtoID, int VendaID)
+        {
+            this.ProdutoID = produtoID;
+            this.VendaID = VendaID;
+        }
     }
 }

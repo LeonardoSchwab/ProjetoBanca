@@ -4,8 +4,7 @@
 
 <table class="table">
     <thead>
-        <tr>
-            <th>ID da venda</th>
+        <tr>            
             <th>Produto</th>
             <th>PreçoUnitario</th>
             <th>Quantidade</th>
@@ -19,20 +18,20 @@
 <br />
 
 <form>
-    <select>
+    <select id="select-produtos">
         @foreach (var produto in ViewBag.Produto)
         {
-            <option value=@produto.ID id="produto">@produto.Nome</option>
+            <option value=@produto.ID>@produto.Nome</option>
         }
     </select>
-            
+
     <label for="precoUnitario">Preço unitário:</label>
-    <input id="precoUnitario" name="venda.PrecoUnitario" />
+    <input id="precoUnitario" name="precoUnitario" />
 
     <label for="quantidade">Quantidade:</label>
-    <input id="quantidade" name="venda.Quantidade" />
+    <input id="quantidade" name="quantidade" />
 
-    <input type="submit" id="enviar-carrinho" value="Enviar pro carrinho"/>
+    <input type="submit" id="enviar-carrinho" value="Enviar pro carrinho" />
 
     <br />
     <br />
@@ -40,6 +39,11 @@
 
     <label for="precoTotal">Preço total:</label>
     <input id="precoTotal" name="venda.PrecoTotal" disabled />
+
+    <label for="quantidadeTotal">Items total:</label>
+    <input id="quantidadeTotal" name="venda.Quantidade" disabled />
+
+    <input type="submit" id="finalizar-compra" value="Finalizar compra" />
 </form>
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>

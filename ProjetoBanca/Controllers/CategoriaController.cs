@@ -30,9 +30,10 @@ namespace ProjetoBanca.Controllers
             categoriaDAO.Adicionar(categoria);
             return RedirectToAction("Index");            
         }
-        public ActionResult Remove(Categoria categoria)
+        public ActionResult Remove(int id)
         {
             var categoriaDAO = new CategoriaDAO();
+            var categoria = categoriaDAO.Buscar(id);
             categoriaDAO.Remover(categoria);
             return RedirectToAction("Index");
         }

@@ -40,5 +40,12 @@ namespace ProjetoBanca.DAO
                 return context.PessoaJuridica.ToList();
             }
         }
+        public PessoaJuridica Buscar(int id)
+        {
+            using (var context = new ProjetoContext())
+            {
+                return context.PessoaJuridica.Find(id);
+            }
+        }
     }
 }
