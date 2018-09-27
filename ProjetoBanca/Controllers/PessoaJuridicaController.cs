@@ -22,13 +22,22 @@ namespace ProjetoBanca.Controllers
         }
         public ActionResult Form()
         {
+            ViewBag.PessoaJuridica = new PessoaJuridica();
             return View();
         }
         public ActionResult Adiciona(PessoaJuridica pessoa)
         {
-            var pessoaJuridicaDAO = new PessoaJuridicaDAO();
-            pessoaJuridicaDAO.Adicionar(pessoa);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var pessoaJuridicaDAO = new PessoaJuridicaDAO();
+                pessoaJuridicaDAO.Adicionar(pessoa);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.PessoaJuridica = pessoa;
+                return View("Form");
+            }
         }
 
         public ActionResult Remove(int id)

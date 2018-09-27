@@ -1,15 +1,38 @@
-﻿$(".botao-remover").click(function () {
-    var linha = $(this).parent().parent();
+﻿$(document).ready(function () {
+    $("#salvar-tipoUsuario").click(function (event) {
+        event.preventDefault();
 
-    var id = $(this).parent().parent().find(".id").text();
+        //var nome = $("#nome").val();
+        //var dados = { Nome: nome };
 
-    var dados = { ID: id };
+        //$("#form-categoria").serialize()
 
-    linha.remove();
+        $.post("http://localhost:62680/TipoUsuario/Adiciona", $("#cad-tipoUsuario").serialize(), function (data) {
+            alert("Cadastro efetuado com sucesso!");
+        }).fail(function () {
+            alert("Falha no cadastro!");
+        });
 
-    $.post("http://localhost:62680/TipoUsuario/Remove", dados, function () {
-        console.log("Sucesso!");
-    }).fail(function () {
-        console.log("Falha!");
+        $("form .form-group input").val("");
     });
+});
+
+$(".botao-remover").click(function () {
+
+    var confirmacao = confirm("Tem certeza que deseja excluir esse registro?");
+    if (confirmacao) {
+
+        var linha = $(this).parent().parent();
+
+        var id = $(this).parent().parent().find(".id").text();
+
+        var dados = { ID: id };
+
+        $.post("http://localhost:62680/TipoUsuario/Remove", dados, function () {
+            linha.remove();
+            alert("Item removido com sucesso!");
+        }).fail(function () {
+            alert("Falha ao remover item!");
+        });
+    }
 });

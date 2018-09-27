@@ -35,14 +35,35 @@ namespace ProjetoBanca.Controllers
             var promocoes = promocaoDAO.Lista();
             ViewBag.Promocao = promocoes;
 
+            ViewBag.Produto = new Produto();
             return View();            
         }
 
         public ActionResult Adiciona(Produto produto)
         {
-            var produtoDAO = new ProdutoDAO();
-            produtoDAO.Adicionar(produto);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var produtoDAO = new ProdutoDAO();
+                produtoDAO.Adicionar(produto);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                var categoriaDAO = new CategoriaDAO();
+                var categorias = categoriaDAO.Lista();
+                ViewBag.Categoria = categorias;
+
+                var fornecedorDAO = new PessoaJuridicaDAO();
+                var fornecedores = fornecedorDAO.Lista();
+                ViewBag.Fornecedor = fornecedores;
+
+                var promocaoDAO = new PromocaoDAO();
+                var promocoes = promocaoDAO.Lista();
+                ViewBag.Promocao = promocoes;
+
+                ViewBag.Produto = produto;
+                return View("Form");
+            }
         }
 
         public ActionResult Remove(int id)

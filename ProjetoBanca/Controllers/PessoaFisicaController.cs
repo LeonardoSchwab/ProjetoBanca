@@ -25,13 +25,25 @@ namespace ProjetoBanca.Controllers
             var tipoDAO = new TipoUsuarioDAO();
             var tipos = tipoDAO.Lista();
             ViewBag.TipoUsuario = tipos;
+            ViewBag.PessoaFisica = new PessoaFisica();
             return View();
         }
         public ActionResult Adiciona(PessoaFisica pessoa)
         {
-            var pessoaFisicaDAO = new PessoaFisicaDAO();
-            pessoaFisicaDAO.Adicionar(pessoa);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid) { 
+                var pessoaFisicaDAO = new PessoaFisicaDAO();
+                pessoaFisicaDAO.Adicionar(pessoa);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                var tipoDAO = new TipoUsuarioDAO();
+                var tipos = tipoDAO.Lista();
+                ViewBag.TipoUsuario = tipos;
+
+                ViewBag.PessoaFisica = pessoa;
+                return View("Form");
+            }
         }
 
         public ActionResult Remove(int id)

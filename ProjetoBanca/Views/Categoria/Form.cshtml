@@ -1,38 +1,16 @@
-﻿
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<form action="/Categoria/Adiciona" method="post" id="form-categoria">
-            
-    <label for="nome">Nome:</label>
-    <input id="nome" name="categoria.Nome" />
-
-    <input type="submit" id="salvar-categoria" />
+<form action="/Categoria/Adiciona" method="post" id="cad-categoria">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input id="nome" name="categoria.Nome" class="form-control" />
+    </div>
+    <input type="submit" id="salvar-categoria" class="form-control" />
 </form>
 
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>
-<script>
-
-    $(document).ready(function () {
-        
-        $("#salvar-categoria").click(function (event) {
-            event.preventDefault();
-
-            var nome = $("#nome").val();                
-            var dados = { Nome: nome};
-
-            //$("#form-categoria").serialize()
-
-            $.post("http://localhost:62680/Categoria/Adiciona", dados, function (data) {
-                console.log("SUCESSO!");
-            }).fail(function () {
-                console.log("FALHA!");
-            });
-
-        });
-
-    });
-</script>
+<script src="~/Scripts/Meus scripts/Scripts-categoria/main.js"></script>

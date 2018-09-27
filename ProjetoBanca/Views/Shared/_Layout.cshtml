@@ -21,20 +21,83 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Produto", "Index", "Produto")</li>
-                    <li>@Html.ActionLink("Cadastro produto", "Form", "Produto")</li>
-                    <li>@Html.ActionLink("Categoria", "Index", "Categoria")</li>
-                    <li>@Html.ActionLink("Cadastro categoria", "Form", "Categoria")</li>
-                    <li>@Html.ActionLink("Pessoa Fisica", "Index", "PessoaFisica")</li>
-                    <li>@Html.ActionLink("Cadastro pessoa fisica", "Form", "PessoaFisica")</li>
-                    <li>@Html.ActionLink("Pessoa Juridica", "Index", "PessoaJuridica")</li>
-                    <li>@Html.ActionLink("Cadastro pessoa juridica", "Form", "PessoaJuridica")</li>
-                    <li>@Html.ActionLink("Promocao", "Index", "Promocao")</li>
-                    <li>@Html.ActionLink("Cadastro promocao", "Form", "Promocao")</li>
-                    <li>@Html.ActionLink("Tipo de usuario", "Index", "TipoUsuario")</li>
-                    <li>@Html.ActionLink("Cadastro tipo de usuario", "Form", "TipoUsuario")</li>
-                    <li>@Html.ActionLink("Venda", "Index", "Venda")</li>
-                    <li>@Html.ActionLink("Cadastro venda", "Venda", "Venda")</li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Produto
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="http://localhost:62680/Produto/">Lista</a>
+                            <br />
+                            <a class="dropdown-item" href="http://localhost:62680/Produto/Form">Cadastro</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categoria
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="http://localhost:62680/Categoria/">Lista</a>
+                            <br />
+                            <a class="dropdown-item" href="http://localhost:62680/Categoria/Form">Cadastro</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pessoa Física
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="http://localhost:62680/PessoaFisica/">Lista</a>
+                            <br />
+                            <a class="dropdown-item" href="http://localhost:62680/PessoaFisica/Form">Cadastro</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pessoa Juridica
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="http://localhost:62680/PessoaJuridica/">Lista</a>
+                            <br />
+                            <a class="dropdown-item" href="http://localhost:62680/PessoaJuridica/Form">Cadastro</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Promoção
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="http://localhost:62680/Promocao/">Lista</a>
+                            <br />
+                            <a class="dropdown-item" href="http://localhost:62680/Promocao/Form">Cadastro</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tipo de Usuario
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="http://localhost:62680/TipoUsuario/">Lista</a>
+                            <br />
+                            <a class="dropdown-item" href="http://localhost:62680/TipoUsuario/Form">Cadastro</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Venda
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="http://localhost:62680/Venda/">Lista</a>
+                            <br/>
+                            <a class="dropdown-item" href="http://localhost:62680/Venda/Venda">Cadastro</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -34,18 +34,40 @@ namespace ProjetoBanca.Controllers
         }
         public ActionResult Adiciona(Vendas venda)
         {
-            var vendasDAO = new VendasDAO();
-            venda.Data = DateTime.Now;
-            vendasDAO.Adicionar(venda);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var vendasDAO = new VendasDAO();
+                venda.Data = DateTime.Now;
+                vendasDAO.Adicionar(venda);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                var produtosDAO = new ProdutoDAO();
+                var produtos = produtosDAO.Lista();
+                ViewBag.Produto = produtos;
+                
+                return View("Venda");
+            }
         }
         public ActionResult AdicionaProdutoVenda(int idProduto)
         {
-            var produtoVendasDAO = new ProdutoVendasDAO();
-            var ultimaVendaId = produtoVendasDAO.IdUltimaVenda();
-            var pv = new ProdutoVendas(idProduto,ultimaVendaId);
-            produtoVendasDAO.Adicionar(pv);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var produtoVendasDAO = new ProdutoVendasDAO();
+                var ultimaVendaId = produtoVendasDAO.IdUltimaVenda();
+                var pv = new ProdutoVendas(idProduto, ultimaVendaId);
+                produtoVendasDAO.Adicionar(pv);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                var produtosDAO = new ProdutoDAO();
+                var produtos = produtosDAO.Lista();
+                ViewBag.Produto = produtos;
+
+                return View("Venda");
+            }
         }
         public ActionResult Remove(int id)
         {            

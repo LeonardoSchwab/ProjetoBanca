@@ -3,21 +3,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="/Promocao/Adiciona" method="post">
-    <label for="descricao">Descrição:</label>
-    <input id="descricao" name="promocao.Descricao" />
+<form id="cad-promocao" action="/Promocao/Adiciona" method="post">
+    <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input id="descricao" name="promocao.Descricao" class="form-control" />
 
-    <label for="desconto">Desconto:</label>
-    <input id="desconto" name="promocao.Desconto" />
+        <label for="desconto">Desconto:</label>
+        <input id="desconto" name="promocao.Desconto" class="form-control" />
 
-    <label for="produtos">Produtos:</label>
-    <select id="produtos" name="promocao.Produtos">
-        @foreach (var produto in ViewBag.Produto)
-        {
-            <option value="@produto.ID">@produto.Nome</option>
-        }
-    </select>
-
-    <input type="submit" />
+        <label for="produtos">Produtos:</label>
+        <select id="produtos" name="promocao.Produtos" class="form-control">
+            @foreach (var produto in ViewBag.Produto)
+            {
+                <option value="@produto.ID">@produto.Nome</option>
+            }
+        </select>
+    </div>
+    <input type="submit" id="salvar-promocao" class="form-control" />
 </form>
-    
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+

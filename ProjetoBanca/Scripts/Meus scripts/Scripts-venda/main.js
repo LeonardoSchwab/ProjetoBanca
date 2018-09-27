@@ -9,7 +9,13 @@ $("#enviar-carrinho").click(function (event) {
     $("#quantidadeTotal").val(itemsTotal);
 
     var linha = novaLinha();
-    linha.find(".botao-remover").click(function () {
+    linha.find(".botao-removerLinha").click(function () {
+        precoTotal -= ($(".precoUnitario").text() * $(".quantidade").text());
+        $("#precoTotal").val(precoTotal);
+
+        itemsTotal -= parseInt($(".quantidade").text());
+        $("#quantidadeTotal").val(itemsTotal);
+
         linha.remove();
     });
 });
@@ -23,7 +29,7 @@ $("#finalizar-compra").click(function (event) {
     var dadosVenda = { PrecoTotal: precoTotal, Quantidade: quantidadeTotal };
 
     $.post("http://localhost:62680/Venda/Adiciona", dadosVenda, function () {
-        console.log("Sucesso!");
+        alert("Venda cadastrada com sucesso!");
         var linhas = $("tbody").find("tr");
 
         linhas.each(function () {
@@ -31,31 +37,35 @@ $("#finalizar-compra").click(function (event) {
             var dadoProduto = { idProduto: produtoId }
 
             $.post("http://localhost:62680/Venda/AdicionaProdutoVenda", dadoProduto, function () {
-                console.log("SUCESSO!");
+                
             }).fail(function () {
-                console.log("FALHA!");
+                
             });
         });
     }).fail(function () {
-            console.log("Falha!");
-        });       
+        alert("Falha ao cadastrar a venda!");
+    });       
 
 });
 
 $(".botao-remover").click(function () {
-    var linha = $(this).parent().parent();
 
-    var id = $(this).parent().parent().find(".id").text();
+    var confirmacao = confirm("Tem certeza que deseja excluir esse registro?");
+    if (confirmacao) {
 
-    var dados = { ID: id };
-    
-    linha.remove();
+        var linha = $(this).parent().parent();
 
-    $.post("http://localhost:62680/Venda/Remove", dados, function () {
-        console.log("Sucesso!");
-    }).fail(function () {
-        console.log("Falha!");
-    });
+        var id = $(this).parent().parent().find(".id").text();
+
+        var dados = { ID: id };
+
+        $.post("http://localhost:62680/Venda/Remove", dados, function () {
+            linha.remove();
+            alert("Item removido com sucesso!");
+        }).fail(function () {
+            alert("Falha ao remover item!");
+        });
+    }
 });
 
 function novaLinha() {
@@ -73,7 +83,7 @@ function novaLinha() {
     colunaPrecoUni.text($("#precoUnitario").val());
 
     var colunaRemover = $("<td>");
-    var link = $("<a>").addClass("botao-remover").attr("href", "#").text("D");
+    var link = $("<a>").addClass("botao-removerLinha").attr("href", "#").text("D");
     colunaRemover.append(link);
 
     linha.append(colunaProduto);

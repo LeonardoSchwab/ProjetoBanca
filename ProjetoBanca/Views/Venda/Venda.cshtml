@@ -18,32 +18,47 @@
 <br />
 
 <form>
-    <select id="select-produtos">
-        @foreach (var produto in ViewBag.Produto)
-        {
-            <option value=@produto.ID>@produto.Nome</option>
-        }
-    </select>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label for="select-produtos">Produtos:</label>
+                <select id="select-produtos" class="form-control">
+                    @foreach (var produto in ViewBag.Produto)
+                    {
+                        <option value=@produto.ID>@produto.Nome</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="precoUnitario">Preço unitário:</label>
+                <input id="precoUnitario" name="precoUnitario" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label for="quantidade">Quantidade:</label>
+                <input id="quantidade" name="quantidade" class="form-control" />
+            </div>
+        </div>
+    </div>
 
-    <label for="precoUnitario">Preço unitário:</label>
-    <input id="precoUnitario" name="precoUnitario" />
-
-    <label for="quantidade">Quantidade:</label>
-    <input id="quantidade" name="quantidade" />
-
-    <input type="submit" id="enviar-carrinho" value="Enviar pro carrinho" />
-
+    <input type="submit" id="enviar-carrinho" value="Enviar pro carrinho" class="form-control" />
+    
     <br />
     <br />
-    <br />
 
-    <label for="precoTotal">Preço total:</label>
-    <input id="precoTotal" name="venda.PrecoTotal" disabled />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="precoTotal">Preço total:</label>
+                <input id="precoTotal" name="venda.PrecoTotal" disabled class="form-control" />
+            </div>
+            <div class="col-md-4">
+                <label for="quantidadeTotal">Items total:</label>
+                <input id="quantidadeTotal" name="venda.Quantidade" disabled class="form-control" />
+            </div>
+        </div>
+    </div>
+    <input type="submit" id="finalizar-compra" value="Finalizar compra" class="form-control" />
 
-    <label for="quantidadeTotal">Items total:</label>
-    <input id="quantidadeTotal" name="venda.Quantidade" disabled />
-
-    <input type="submit" id="finalizar-compra" value="Finalizar compra" />
 </form>
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>

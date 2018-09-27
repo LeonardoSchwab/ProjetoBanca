@@ -3,35 +3,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="/PessoaJuridica/Adiciona" method="post">
-    <label for="nome">Nome:</label>
-    <input id="nome" name="pessoa.Nome" />
+<form id="cad-pj" action="/PessoaJuridica/Adiciona" method="post">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input id="nome" name="pessoa.Nome" class="form-control" />
 
-    <label for="rua">Rua:</label>
-    <input id="rua" name="pessoa.Rua" />
+        <label for="rua">Rua:</label>
+        <input id="rua" name="pessoa.Rua" class="form-control" />
 
-    <label for="bairro">Bairro:</label>
-    <input id="bairro" name="pessoa.Bairro" />
+        <label for="bairro">Bairro:</label>
+        <input id="bairro" name="pessoa.Bairro" class="form-control" />
 
-    <label for="numeroLogradouro">Numero Logradouro:</label>
-    <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" />
+        <label for="numeroLogradouro">Numero Logradouro:</label>
+        <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" class="form-control" />
 
-    <label for="complemento">Complemento:</label>
-    <input id="complemento" name="pessoa.Complemento" />
+        <label for="complemento">Complemento:</label>
+        <input id="complemento" name="pessoa.Complemento" class="form-control" />
 
-    <label for="cnpj">CNPJ:</label>
-    <input id="cnpj" name="pessoa.CNPJ" />
+        <label for="cnpj">CNPJ:</label>
+        <input id="cnpj" name="pessoa.CNPJ" class="form-control" />
 
-    <label for="sexo">Sexo:</label>
-    <select id="sexo" name="pessoa.Sexo">
-        <option value="M">M</option>
-        <option value="F">F</option>
-    </select>
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="pessoa.Sexo" class="form-control">
+            <option value="M">M</option>
+            <option value="F">F</option>
+        </select>
 
-            
-    <label for="preco">Preco:</label>
-    <input id="preco" name="pessoa.Preco" />
 
-    <input type="submit" />
+        <label for="preco">Preco:</label>
+        <input id="preco" name="pessoa.Preco" class="form-control" />
+    </div>
+    <input type="submit" id="salvar-pj" class="form-control" />
 </form>
     
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/Meus scripts/Scripts-pessoaJuridica/main.js"></script>

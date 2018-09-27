@@ -22,13 +22,21 @@ namespace ProjetoBanca.Controllers
         }
         public ActionResult Form()
         {
+            ViewBag.Categoria = new Categoria();
             return View();
         }        
         public ActionResult Adiciona(Categoria categoria)
-        {            
-            var categoriaDAO = new CategoriaDAO();
-            categoriaDAO.Adicionar(categoria);
-            return RedirectToAction("Index");            
+        {
+            if (ModelState.IsValid) { 
+                var categoriaDAO = new CategoriaDAO();
+                categoriaDAO.Adicionar(categoria);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.Categoria = categoria;
+                return View("Form");
+            }
         }
         public ActionResult Remove(int id)
         {

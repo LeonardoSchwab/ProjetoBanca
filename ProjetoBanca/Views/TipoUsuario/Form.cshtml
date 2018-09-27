@@ -3,10 +3,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form action="/TipoUsuario/Adiciona" method="post">
-    <label for="nome">Nome:</label>
-    <input id="nome" name="tipo.Nome" />
-
-    <input type="submit" />
+<form action="/TipoUsuario/Adiciona" id="cad-tipoUsuario" method="post">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input id="nome" name="tipo.Nome" class="form-control" />
+    </div>
+    <input type="submit" class="form-control" id="salvar-tipoUsuario"/>
 </form>
-   
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/Meus scripts/Scripts-tipoUsuario/main.js"></script>

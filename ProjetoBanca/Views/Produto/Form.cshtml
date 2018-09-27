@@ -3,35 +3,38 @@
 }
 
 
-<form action="/Produto/Adiciona" method="post">
-    <label for="nome">Nome:</label>
-    <input id="nome" name="produto.Nome" />
+<form id="cad-produto" action="/Produto/Adiciona" method="post">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input id="nome" name="produto.Nome" class="form-control" />
 
-    <label for="preco">Preço:</label>
-    <input id="preco" name="produto.Preco" />
+        <label for="preco">Preço:</label>
+        <input id="preco" name="produto.Preco" class="form-control" />
 
-    <label for="quantidade">Quantidade:</label>
-    <input id="quantidade" name="produto.Quantidade" />
+        <label for="quantidade">Quantidade:</label>
+        <input id="quantidade" name="produto.Quantidade" class="form-control" />
 
-    <label for="unidade">Unidade:</label>
-    <input id="unidade" name="produto.Unidade" />
+        <label for="unidade">Unidade:</label>
+        <input id="unidade" name="produto.Unidade" class="form-control" />
 
-    <label for="categoria">Categoria:</label>
-    <select id="categoria" name="produto.CategoriaID">
-        @foreach (var categoria in ViewBag.Categoria)
-        {
-            <option value="@categoria.ID">@categoria.Nome</option>
-        }
-    </select>
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="produto.CategoriaID" class="form-control">
+            @foreach (var categoria in ViewBag.Categoria)
+            {
+                <option value="@categoria.ID">@categoria.Nome</option>
+            }
+        </select>
 
-    <label for="fornecedor">Fornecedor:</label>
-    <select id="fornecedor" name="produto.FornecedorID">
-        @foreach (var fornecedor in ViewBag.Fornecedor)
-        {
-            <option value="@fornecedor.ID">@fornecedor.Nome</option>
-        }
-    </select>
-
-    <input type="submit" />
+        <label for="fornecedor">Fornecedor:</label>
+        <select id="fornecedor" name="produto.FornecedorID" class="form-control">
+            @foreach (var fornecedor in ViewBag.Fornecedor)
+            {
+                <option value="@fornecedor.ID">@fornecedor.Nome</option>
+            }
+        </select>
+    </div>
+    <input type="submit" id="salvar-produto" class="form-control" />
 </form>
-   
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/Meus scripts/Scripts-produto/main.js"></script>

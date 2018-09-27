@@ -22,13 +22,22 @@ namespace ProjetoBanca.Controllers
         }
         public ActionResult Form()
         {
+            ViewBag.Tipo = new TipoUsuario();
             return View();
         }
         public ActionResult Adiciona(TipoUsuario tipo)
         {
-            var tipoDAO = new TipoUsuarioDAO();
-            tipoDAO.Adicionar(tipo);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var tipoDAO = new TipoUsuarioDAO();
+                tipoDAO.Adicionar(tipo);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewBag.Tipo = tipo;
+                return View("Form");
+            }
         }
 
         public ActionResult Remove(int id)
