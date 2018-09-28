@@ -28,11 +28,16 @@ namespace ProjetoBanca.Controllers
             ViewBag.PessoaFisica = new PessoaFisica();
             return View();
         }
-        public ActionResult Adiciona(PessoaFisica pessoa)
+        public ActionResult Adiciona(PessoaFisica pessoa, Login login)
         {
             if (ModelState.IsValid) { 
                 var pessoaFisicaDAO = new PessoaFisicaDAO();
                 pessoaFisicaDAO.Adicionar(pessoa);
+
+                var loginDAO = new LoginDAO();
+                login.PessoaFisicaID = pessoa.ID;
+                loginDAO.Adicionar(login);
+
                 return RedirectToAction("Index");
             }
             else
@@ -42,6 +47,7 @@ namespace ProjetoBanca.Controllers
                 ViewBag.TipoUsuario = tipos;
 
                 ViewBag.PessoaFisica = pessoa;
+                ViewBag.Login = login;
                 return View("Form");
             }
         }

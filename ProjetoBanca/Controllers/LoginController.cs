@@ -1,4 +1,5 @@
 ﻿using ProjetoBanca.DAO;
+using ProjetoBanca.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace ProjetoBanca.Controllers
         {
             return View();
         }
-        /*public ActionResult Autentica(string cpf, string dataNascimento)
+        public ActionResult Autentica(string cpf, string dataNascimento)
         {
             var pessoaFisicaDAO = new PessoaFisicaDAO();
             var usuario = pessoaFisicaDAO.Buscar(cpf, dataNascimento);
@@ -27,6 +28,27 @@ namespace ProjetoBanca.Controllers
             {
                 return RedirectToAction("Index");
             }
-        }*/
+        }
+
+        public ActionResult LoginColaborador()
+        {
+            return View();
+        }
+
+        public ActionResult Logar(Login login)
+        {
+            if(!AcessoUsuario.Usuario.AutenticarUsuario(login.Email, login.Senha))
+            {
+                ViewBag.mensagemErro = "O email do usuario ou a senha informada estão incorretos!";
+                return View("LoginColaborador");
+            }
+
+            return RedirectToAction("Venda", "Venda");
+        }
+
+        public ActionResult Exemplo()
+        {
+            return View();
+        }
     }
 }

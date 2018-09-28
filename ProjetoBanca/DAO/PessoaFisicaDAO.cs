@@ -48,5 +48,19 @@ namespace ProjetoBanca.DAO
                 return context.PessoaFisica.Find(id);
             }
         }
+
+        public PessoaFisica Buscar(string cpf, string dataNascimento)
+        {
+            using (var context = new ProjetoContext())
+            {
+                var pessoas = this.Lista();
+                var pessoa = (from p in pessoas
+                          where p.CPF == cpf &&
+                          p.DataNascimento == dataNascimento
+                          select p).First();
+
+                return pessoa;
+            }
+        }
     }
 }

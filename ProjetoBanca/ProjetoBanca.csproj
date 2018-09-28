@@ -222,6 +222,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessoUsuario\PermissaoProvider.cs" />
+    <Compile Include="AcessoUsuario\PermissoesFiltro.cs" />
+    <Compile Include="AcessoUsuario\Usuario.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -235,6 +238,7 @@
     <Compile Include="Controllers\TipoUsuarioController.cs" />
     <Compile Include="Controllers\VendaController.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\PessoaFisicaDAO.cs" />
     <Compile Include="DAO\PessoaJuridicaDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
@@ -255,8 +259,13 @@
     <Compile Include="Migrations\20180923205615_precoUniVendas.designer.cs">
       <DependentUpon>20180923205615_precoUniVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20180927185415_Login.cs" />
+    <Compile Include="Migrations\20180927185415_Login.designer.cs">
+      <DependentUpon>20180927185415_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ProjetoContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\PessoaFisica.cs" />
     <Compile Include="Models\PessoaJuridica.cs" />
@@ -328,6 +337,7 @@
     <Content Include="Views\Venda\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Venda\Venda.cshtml" />
+    <Content Include="Views\Login\LoginColaborador.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

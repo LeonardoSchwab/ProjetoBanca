@@ -17,6 +17,7 @@ namespace ProjetoBanca.DAO
         public DbSet<Vendas> Vendas{ get; private set; }
         public DbSet<TipoUsuario> TipoUsuario{ get; private set; }
         public DbSet<ProdutoVendas> ProdutoVendas { get; private set; }
+        public DbSet<Login> Login { get; private set; }
                 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
