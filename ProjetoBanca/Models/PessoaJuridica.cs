@@ -8,10 +8,10 @@ namespace ProjetoBanca.Models
 {
     public class PessoaJuridica : Pessoa
     {
-        [Required]
+        [Required(ErrorMessage = "CNPJ precisa ser digitado!")]
         public string CNPJ{ get; set; }
         public IList<Produto> Produtos { get; private set; }
-        [Required]
+        [Required(ErrorMessage = "Preço precisa ser digitado!")]
         public int Preco { get; set; }
 
         public PessoaJuridica()

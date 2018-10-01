@@ -47,5 +47,14 @@ namespace ProjetoBanca.DAO
                 return context.Login.Find(id);
             }
         }
+        public Login BuscarColab(string email, string senha)
+        {            
+            var listaLogin = this.Lista();
+            var login = (from l in listaLogin
+                            where l.Senha == senha &&
+                            l.Email == email
+                            select l).First();
+            return login;         
+        }
     }
 }

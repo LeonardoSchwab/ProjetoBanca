@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.cinza{
+    color: dimgray;
+}
+
+.margem-superior{
+    margin-top: -170px;
+}

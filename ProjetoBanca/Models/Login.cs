@@ -10,7 +10,7 @@ namespace ProjetoBanca.Models
     public class Login
     {
         public int ID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Email precisa ser digitado!")]
         public string Email { get; set; }
         [Required]
         public string Senha { get; set; }

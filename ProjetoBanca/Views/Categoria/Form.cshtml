@@ -1,12 +1,14 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";    
+    Layout = "~/Content/dodmond/_layout.cshtml";
 }
 
 
-<form action="/Categoria/Adiciona" method="post" id="cad-categoria">
+<form class="margem-superior" action="/Categoria/Adiciona" method="post" id="cad-categoria">
     <div class="form-group">
         <label for="nome">Nome:</label>
-        <input id="nome" name="categoria.Nome" class="form-control" />
+        @Html.ValidationMessage("categoria.Nome")
+        <input id="nome" name="categoria.Nome" class="form-control" />        
     </div>
     <input type="submit" id="salvar-categoria" class="form-control" />
 </form>

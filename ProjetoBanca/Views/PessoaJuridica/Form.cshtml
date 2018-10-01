@@ -1,11 +1,13 @@
 ﻿
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Content/dodmond/_layout.cshtml";
 }
 
-<form id="cad-pj" action="/PessoaJuridica/Adiciona" method="post">
+<form class="margem-superior" id="cad-pj" action="/PessoaJuridica/Adiciona" method="post">
     <div class="form-group">
         <label for="nome">Nome:</label>
+        @Html.ValidationMessage("pessoa.Nome")
         <input id="nome" name="pessoa.Nome" class="form-control" />
 
         <label for="rua">Rua:</label>
@@ -21,6 +23,7 @@
         <input id="complemento" name="pessoa.Complemento" class="form-control" />
 
         <label for="cnpj">CNPJ:</label>
+        @Html.ValidationMessage("pessoa.CNPJ")
         <input id="cnpj" name="pessoa.CNPJ" class="form-control" />
 
         <label for="sexo">Sexo:</label>
@@ -31,7 +34,9 @@
 
 
         <label for="preco">Preco:</label>
+        @Html.ValidationMessage("pessoa.Preco")
         <input id="preco" name="pessoa.Preco" class="form-control" />
+
     </div>
     <input type="submit" id="salvar-pj" class="form-control" />
 </form>

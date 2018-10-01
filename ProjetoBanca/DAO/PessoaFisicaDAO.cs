@@ -41,6 +41,7 @@ namespace ProjetoBanca.DAO
                 return context.PessoaFisica.ToList();
             }
         }
+
         public PessoaFisica Buscar(int id)
         {
             using (var context = new ProjetoContext())

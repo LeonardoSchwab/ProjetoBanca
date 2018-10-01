@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Content/dodmond/_layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -10,20 +10,18 @@
     <meta name="viewport" content="width=device-width" />
     <title>LoginColaborador</title>
 </head>
-<body>
-    <div> 
+<body>    
 
-        <form action="/Login/Logar" method="post">
+    <form action="/Login/AutenticaColaborador" method="post">
+        <div class="form-group">
             <label for="email">Email:</label>
-            <input id="email" name="login.Email" class="form-control" />
+            <input id="email" name="email" class="form-control" />
 
             <label for="senha">Senha:</label>
-            <input id="senha" name="login.Senha" class="form-control" />
+            <input id="senha" name="senha" class="form-control" />
+        </div>
+            <input type="submit" id="login" class="form-control" />        
+    </form>
 
-            <input type="submit" id="login" class="form-control" />
-
-        </form>
-
-    </div>
 </body>
 </html>

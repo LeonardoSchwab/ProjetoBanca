@@ -25,11 +25,12 @@ namespace ProjetoBanca.DAO
                 context.SaveChanges();
             }
         }
-        public void Atualizar(Categoria categoria)
+        public void Atualizar(Categoria novaCategoria)
         {
             using(var context = new ProjetoContext())
             {                
-                context.Categoria.Update(categoria);
+                var categoria = context.Categoria.Find(novaCategoria.ID);
+                categoria.Nome = novaCategoria.Nome;
                 context.SaveChanges();
             }
         }

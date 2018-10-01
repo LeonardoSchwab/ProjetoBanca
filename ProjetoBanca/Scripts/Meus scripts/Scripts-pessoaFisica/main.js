@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿/*$(document).ready(function () {
     $("#salvar-pf").click(function (event) {
         event.preventDefault();
 
@@ -15,7 +15,7 @@
 
         $("form .form-group input").val("");
     });
-});
+});*/
 
 $(".botao-remover").click(function () {
 

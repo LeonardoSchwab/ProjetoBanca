@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
-    //[AutorizacaoFilter]
+    [AutorizacaoFilterColab]
     public class CategoriaController : Controller
     {
         // GET: Categoria
@@ -18,6 +18,7 @@ namespace ProjetoBanca.Controllers
             var categoriaDAO = new CategoriaDAO();
             var categorias = categoriaDAO.Lista();
             ViewBag.Categoria = categorias;
+            ViewBag.Colaborador = (Login)Session["colabLogado"];
             return View();
         }
         public ActionResult Form()
@@ -30,13 +31,14 @@ namespace ProjetoBanca.Controllers
             if (ModelState.IsValid) { 
                 var categoriaDAO = new CategoriaDAO();
                 categoriaDAO.Adicionar(categoria);
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
             else
             {
                 ViewBag.Categoria = categoria;
-                return View("Form");
+                
             }
+            return View("Form");
         }
         public ActionResult Remove(int id)
         {
@@ -46,9 +48,23 @@ namespace ProjetoBanca.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Edita(Categoria categoria)
+        public ActionResult Edita(int id)
         {
-            return View(categoria);
+            var categoriaDAO = new CategoriaDAO();
+            var categoria = categoriaDAO.Buscar(id);
+            ViewBag.Categoria = categoria;
+            return View();
+        }
+
+        public ActionResult Editar(int id, Categoria categoria)
+        {
+            var categoriaDAO = new CategoriaDAO();
+            categoria.ID = id;
+            categoriaDAO.Atualizar(categoria);
+
+            var categorias = categoriaDAO.Lista();
+            ViewBag.Categoria = categorias;
+            return View("Index");
         }
     }
 }

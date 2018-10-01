@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
-    //[AutorizacaoFilter]
+    [AutorizacaoFilterColab]
     public class PessoaFisicaController : Controller
     {
         // GET: PessoaFisica
@@ -28,16 +28,21 @@ namespace ProjetoBanca.Controllers
             ViewBag.PessoaFisica = new PessoaFisica();
             return View();
         }
-        public ActionResult Adiciona(PessoaFisica pessoa, Login login)
+        public ActionResult Adiciona(PessoaFisica pessoa, string email)
         {
             if (ModelState.IsValid) { 
                 var pessoaFisicaDAO = new PessoaFisicaDAO();
                 pessoaFisicaDAO.Adicionar(pessoa);
-
-                var loginDAO = new LoginDAO();
-                login.PessoaFisicaID = pessoa.ID;
-                loginDAO.Adicionar(login);
-
+                pessoa.GetTipo();
+                //if (!pessoa.Tipo.Equals("Cliente"))
+                //{
+                    var loginDAO = new LoginDAO();
+                    var login = new Login();
+                    login.Email = email;
+                    login.PessoaFisicaID = pessoa.ID;
+                    login.Senha = pessoa.CPF;
+                    loginDAO.Adicionar(login);
+                //}
                 return RedirectToAction("Index");
             }
             else
@@ -47,7 +52,7 @@ namespace ProjetoBanca.Controllers
                 ViewBag.TipoUsuario = tipos;
 
                 ViewBag.PessoaFisica = pessoa;
-                ViewBag.Login = login;
+                //ViewBag.Login = login;
                 return View("Form");
             }
         }

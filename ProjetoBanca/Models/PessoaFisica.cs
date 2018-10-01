@@ -9,13 +9,11 @@ namespace ProjetoBanca.Models
 {
     public class PessoaFisica : Pessoa
     {
-        [Required]
-        public string CPF { get; set; }
-        [Required]
+        [Required(ErrorMessage = "CPF precisa ser digitado!")]
+        public string CPF { get; set; }        
         public char Sexo { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Data de nascimento precisa ser digitada!")]
         public string DataNascimento { get; set; }
-        [Required]
         public int TipoID { get; set; }
         public TipoUsuario Tipo { get; private set; }
         public int Pontos { get; set; }

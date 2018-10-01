@@ -9,9 +9,9 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
+    [AutorizacaoFilterColab]
     public class VendaController : Controller
     {
-        //[AutorizacaoFilter]
         // GET: Venda
         public ActionResult Index()
         {

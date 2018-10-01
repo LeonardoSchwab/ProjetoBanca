@@ -10,9 +10,9 @@ namespace ProjetoBanca.Models
     {
         public int ID { get; set; }
         public IList<ProdutoVendas> Produtos{ get; private set; }    
-        [Required]
+        [Required(ErrorMessage = "Preço precisa ser calculado. Insira um produto!")]
         public double PrecoTotal{ get; set; }
-        [Required]
+        [Required(ErrorMessage = "Quantidade precisa ser calculada. Insira um produto!")]
         public int Quantidade{ get; set; }
         [Required]
         public DateTime Data { get; set; }

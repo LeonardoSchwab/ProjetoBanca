@@ -248,6 +248,7 @@
     <Compile Include="DAO\TipoUsuarioDAO.cs" />
     <Compile Include="DAO\VendasDAO.cs" />
     <Compile Include="Filtros\AutorizacaoFilterAttribute.cs" />
+    <Compile Include="Filtros\AutorizacaoFilterColab.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -262,6 +263,10 @@
     <Compile Include="Migrations\20180927185415_Login.cs" />
     <Compile Include="Migrations\20180927185415_Login.designer.cs">
       <DependentUpon>20180927185415_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20181001000327_Email.cs" />
+    <Compile Include="Migrations\20181001000327_Email.designer.cs">
+      <DependentUpon>20181001000327_Email.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ProjetoContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -281,6 +286,79 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\320x168.png" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\320x320.png" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\avatar.png" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\backgrounds\01.png" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\backgrounds\02.png" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\backgrounds\03.png" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\backgrounds\index.html" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\gallery\01.png" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\gallery\index.html" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\imgl.gif" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\imgr.gif" />
+    <Content Include="Content\dodmond-principal\dodmond\images\demo\index.html" />
+    <Content Include="Content\dodmond-principal\dodmond\images\index.html" />
+    <None Include="Content\dodmond-principal\dodmond\index.cshtml" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\index.html" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\scripts\index.html" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\scripts\jquery.backtotop.js" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\scripts\jquery.flexslider-min.js" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\scripts\jquery.min.js" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\scripts\jquery.mobilemenu.js" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\custom.flexslider.css" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\font-awesome.min.css" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\fonts\index.html" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\framework.css" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\index.html" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\layout.css" />
+    <Content Include="Content\dodmond-principal\dodmond\licence.txt" />
+    <Content Include="Content\dodmond-principal\dodmond\pages\basic-grid.html" />
+    <Content Include="Content\dodmond-principal\dodmond\pages\full-width.html" />
+    <Content Include="Content\dodmond-principal\dodmond\pages\gallery.html" />
+    <Content Include="Content\dodmond-principal\dodmond\pages\index.html" />
+    <Content Include="Content\dodmond-principal\dodmond\pages\sidebar-left.html" />
+    <Content Include="Content\dodmond-principal\dodmond\pages\sidebar-right.html" />
+    <Content Include="Content\dodmond\images\demo\320x168.png" />
+    <Content Include="Content\dodmond\images\demo\320x320.png" />
+    <Content Include="Content\dodmond\images\demo\avatar.png" />
+    <Content Include="Content\dodmond\images\demo\backgrounds\01.png" />
+    <Content Include="Content\dodmond\images\demo\backgrounds\02.png" />
+    <Content Include="Content\dodmond\images\demo\backgrounds\03.png" />
+    <Content Include="Content\dodmond\images\demo\backgrounds\index.html" />
+    <Content Include="Content\dodmond\images\demo\gallery\01.png" />
+    <Content Include="Content\dodmond\images\demo\gallery\index.html" />
+    <Content Include="Content\dodmond\images\demo\imgl.gif" />
+    <Content Include="Content\dodmond\images\demo\imgr.gif" />
+    <Content Include="Content\dodmond\images\demo\index.html" />
+    <Content Include="Content\dodmond\images\index.html" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\dodmond-principal\dodmond\layout\styles\fonts\FontAwesome.otf" />
+    <None Include="Content\dodmond\_layout.cshtml" />
+    <Content Include="Content\dodmond\layout\index.html" />
+    <Content Include="Content\dodmond\layout\scripts\index.html" />
+    <Content Include="Content\dodmond\layout\scripts\jquery.backtotop.js" />
+    <Content Include="Content\dodmond\layout\scripts\jquery.flexslider-min.js" />
+    <Content Include="Content\dodmond\layout\scripts\jquery.min.js" />
+    <Content Include="Content\dodmond\layout\scripts\jquery.mobilemenu.js" />
+    <Content Include="Content\dodmond\layout\styles\custom.flexslider.css" />
+    <Content Include="Content\dodmond\layout\styles\font-awesome.min.css" />
+    <Content Include="Content\dodmond\layout\styles\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\dodmond\layout\styles\fonts\index.html" />
+    <Content Include="Content\dodmond\layout\styles\framework.css" />
+    <Content Include="Content\dodmond\layout\styles\index.html" />
+    <Content Include="Content\dodmond\layout\styles\layout.css" />
+    <Content Include="Content\dodmond\licence.txt" />
+    <Content Include="Content\dodmond\pages\basic-grid.html" />
+    <Content Include="Content\dodmond\pages\full-width.html" />
+    <Content Include="Content\dodmond\pages\gallery.html" />
+    <Content Include="Content\dodmond\pages\index.html" />
+    <Content Include="Content\dodmond\pages\sidebar-left.html" />
+    <Content Include="Content\dodmond\pages\sidebar-right.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -290,6 +368,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\dodmond\layout\styles\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\dodmond\layout\styles\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\dodmond\layout\styles\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\dodmond\layout\styles\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\dodmond\layout\styles\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -338,6 +421,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Venda\Venda.cshtml" />
     <Content Include="Views\Login\LoginColaborador.cshtml" />
+    <Content Include="Views\Categoria\Edita.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

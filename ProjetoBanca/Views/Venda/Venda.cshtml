@@ -1,8 +1,9 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Content/dodmond/_layout.cshtml";
 }
 
-<table class="table">
+<table class="table cinza">
     <thead>
         <tr>            
             <th>Produto</th>
@@ -49,11 +50,15 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="precoTotal">Preço total:</label>
+                @Html.ValidationMessage("pessoa.PrecoTotal")
                 <input id="precoTotal" name="venda.PrecoTotal" disabled class="form-control" />
+
             </div>
             <div class="col-md-4">
                 <label for="quantidadeTotal">Items total:</label>
+                @Html.ValidationMessage("pessoa.Quantidade")
                 <input id="quantidadeTotal" name="venda.Quantidade" disabled class="form-control" />
+
             </div>
         </div>
     </div>

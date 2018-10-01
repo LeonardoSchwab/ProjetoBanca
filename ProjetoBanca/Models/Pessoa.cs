@@ -9,7 +9,7 @@ namespace ProjetoBanca.Models
     public abstract class Pessoa
     {
         public int ID{ get; set; }
-        [Required]
+        [Required(ErrorMessage = "Nome precisa ser digitado!")]
         public string Nome{ get; set; }      
         public string Bairro{ get; set; }
         public string Rua { get; set; }

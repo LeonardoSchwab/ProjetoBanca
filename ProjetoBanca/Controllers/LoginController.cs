@@ -22,7 +22,22 @@ namespace ProjetoBanca.Controllers
             if(usuario != null)
             {
                 Session["usuarioLogado"] = usuario;
-                return RedirectToAction("Index", "Produto");
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        public ActionResult AutenticaColaborador(string email, string senha)
+        {
+            var loginDAO = new LoginDAO();
+            var colab = loginDAO.BuscarColab(email, senha);
+            if (colab != null)
+            {
+                Session["colabLogado"] = colab;                
+                return RedirectToAction("Index", "Venda");
             }
             else
             {
@@ -33,6 +48,12 @@ namespace ProjetoBanca.Controllers
         public ActionResult LoginColaborador()
         {
             return View();
+        }
+
+        public ActionResult DeslogarColaborador()
+        {
+            Session["colabLogado"] = null;
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Logar(Login login)

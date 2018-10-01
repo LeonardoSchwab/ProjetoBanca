@@ -1,13 +1,17 @@
-﻿
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Content/dodmond/_layout.cshtml";
+    ViewBag.NomeColaborador = "";
 }
 
-<table class="table">
+<span></span>
+
+<table class="table cinza">
     <thead>
         <tr>
             <th>Id</th>
             <th>Nome</th>
+            <th>Editar</th>
             <th>Remover</th>
         </tr>
     </thead>
@@ -17,7 +21,8 @@
             <tr>
                 <td class="id">@categoria.ID</td>
                 <td class="nome">@categoria.Nome</td>
-                <td><a class="botao-remover" href="#">D</a></td>
+                <td><a class="botao-remover" href="#">Remover</a></td>
+                <td><a class="botao-editar" href="http://localhost:62680/Categoria/Edita?id=@categoria.ID">Editar</a></td>
             </tr>
         }
     </tbody>
@@ -25,4 +30,3 @@
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 <script src="~/Scripts/Meus scripts/Scripts-categoria/main.js"></script>
-

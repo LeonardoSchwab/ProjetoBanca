@@ -21,7 +21,7 @@ $("#enviar-carrinho").click(function (event) {
 });
 
 $("#finalizar-compra").click(function (event) {
-    event.preventDefault();
+    //event.preventDefault();
 
     var precoTotal = $("#precoTotal").val();
     var quantidadeTotal = $("#quantidadeTotal").val();

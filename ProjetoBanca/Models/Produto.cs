@@ -9,20 +9,18 @@ namespace ProjetoBanca.Models
     public class Produto
     {
         public int ID{ get; set; }
-        [Required]
+        [Required(ErrorMessage = "Nome precisa ser digitado!")]
         public string Nome{ get; set; }
-        [Required]
+        [Required(ErrorMessage = "Preço precisa ser digitado!")]
         public double Preco { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Unidade precisa ser digitada!")]
         public string Unidade{ get; set; }
-        [Required]
+        [Required(ErrorMessage = "Quantidade precisa ser digitada!")]
         public int Quantidade { get; set; }
-        [Required]
         public int CategoriaID { get; set; }
         public Categoria Categoria { get; private set; }
         //public int PromocaoID { get; set; }
         public Promocao Promocao{ get; private set; }
-        [Required]
         public int FornecedorID { get; set; }
         public PessoaJuridica Fornecedor { get; private set; }
         public IList<ProdutoVendas> Vendas { get; private set; }

@@ -1,6 +1,6 @@
-﻿$(document).ready(function () {
+﻿/*$(document).ready(function () {
     $("#salvar-categoria").click(function (event) {
-        event.preventDefault();
+        //event.preventDefault();
                                 
         //var nome = $("#nome").val();
         //var dados = { Nome: nome };
@@ -14,7 +14,7 @@
             alert("Falha no cadastro!");
         });        
     });
-});
+});*/
 
 $(".botao-remover").click(function () {
 

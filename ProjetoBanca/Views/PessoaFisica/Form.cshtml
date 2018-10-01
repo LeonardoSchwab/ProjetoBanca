@@ -1,11 +1,13 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Content/dodmond/_layout.cshtml";
 }
 
 
-<form id="cad-pf" action="/PessoaFisica/Adiciona" method="post">
+<form class="margem-superior" id="cad-pf" action="/PessoaFisica/Adiciona" method="post">
     <div class="form-group">
         <label for="nome">Nome:</label>
+        @Html.ValidationMessage("pessoa.Nome")
         <input id="nome" name="pessoa.Nome" class="form-control" />
 
         <label for="rua">Rua:</label>
@@ -21,6 +23,7 @@
         <input id="complemento" name="pessoa.Complemento" class="form-control" />
 
         <label for="cpf">CPF:</label>
+        @Html.ValidationMessage("pessoa.CPF")
         <input id="cpf" name="pessoa.CPF" class="form-control" />
 
         <label for="sexo">Sexo:</label>
@@ -30,6 +33,7 @@
         </select>
 
         <label for="dataNascimento">Data de nascimento:</label>
+        @Html.ValidationMessage("pessoa.DataNascimento")
         <input id="dataNascimento" name="pessoa.DataNascimento" class="form-control" />
 
         <label for="tipo">Tipo:</label>
@@ -42,11 +46,7 @@
 
 
         <label for="email">Email:</label>
-        <input id="email" name="login.Email" class="form-control" />
-
-
-        <label for="senha">Senha:</label>
-        <input id="senha" name="login.senha" disabled class="form-control" />
+        <input id="email" name="email" class="form-control" />
 
     </div>
     <input type="submit" id="salvar-pf" class="form-control"/>

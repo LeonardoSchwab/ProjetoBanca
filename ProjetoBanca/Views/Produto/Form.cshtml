@@ -1,20 +1,25 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Content/dodmond/_layout.cshtml";
 }
 
 
-<form id="cad-produto" action="/Produto/Adiciona" method="post">
+<form class="margem-superior" id="cad-produto" action="/Produto/Adiciona" method="post">
     <div class="form-group">
         <label for="nome">Nome:</label>
+        @Html.ValidationMessage("pessoa.Nome")
         <input id="nome" name="produto.Nome" class="form-control" />
 
         <label for="preco">Preço:</label>
+        @Html.ValidationMessage("pessoa.Preco")
         <input id="preco" name="produto.Preco" class="form-control" />
 
         <label for="quantidade">Quantidade:</label>
+        @Html.ValidationMessage("pessoa.Quantidade")
         <input id="quantidade" name="produto.Quantidade" class="form-control" />
 
         <label for="unidade">Unidade:</label>
+        @Html.ValidationMessage("pessoa.Unidade")
         <input id="unidade" name="produto.Unidade" class="form-control" />
 
         <label for="categoria">Categoria:</label>
