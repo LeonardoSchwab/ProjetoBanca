@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /*
 Template Name: Dodmond
 Author: <a href="http://www.os-templates.com/">OS Templates</a>
@@ -49,7 +49,7 @@ File: Layout CSS
 
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
-#pageintro{padding:250px 0;}
+#pageintro{padding:50px 0;}
 
 #pageintro li article{display:block; max-width:75%; padding-bottom:10px; overflow:hidden;}
 #pageintro li article *{word-wrap:break-word;}
@@ -252,7 +252,7 @@ hr, .borderedbox{border-color:#D7D7D7;}
 label span{color:#FF0000; background-color:inherit;}
 input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 .overlay{color:#FFFFFF; background-color:inherit;}
-.overlay::after{color:inherit; background-color:rgba(0,0,0,.55);}
+.overlay::after{color:inherit; /*background-color:rgba(0,0,0,.55);*/}
 
 .btn, .btn.inverse:hover{color:#FFFFFF; background-color:#629BAF; border-color:#629BAF;}
 .btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}

@@ -3,53 +3,56 @@
     Layout = "~/Content/dodmond/_layout.cshtml";
 }
 
-
 <form class="margem-superior" id="cad-pf" action="/PessoaFisica/Adiciona" method="post">
     <div class="form-group">
-        <label for="nome">Nome:</label>
-        @Html.ValidationMessage("pessoa.Nome")
-        <input id="nome" name="pessoa.Nome" class="form-control" />
-
-        <label for="rua">Rua:</label>
-        <input id="rua" name="pessoa.Rua" class="form-control" />
-
-        <label for="bairro">Bairro:</label>
-        <input id="bairro" name="pessoa.Bairro" class="form-control" />
-
-        <label for="numeroLogradouro">Numero Logradouro:</label>
-        <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" class="form-control" />
-
-        <label for="complemento">Complemento:</label>
-        <input id="complemento" name="pessoa.Complemento" class="form-control" />
-
-        <label for="cpf">CPF:</label>
-        @Html.ValidationMessage("pessoa.CPF")
-        <input id="cpf" name="pessoa.CPF" class="form-control" />
-
-        <label for="sexo">Sexo:</label>
-        <select id="sexo" name="pessoa.Sexo" class="form-control">
-            <option value="M">M</option>
-            <option value="F">F</option>
-        </select>
-
-        <label for="dataNascimento">Data de nascimento:</label>
-        @Html.ValidationMessage("pessoa.DataNascimento")
-        <input id="dataNascimento" name="pessoa.DataNascimento" class="form-control" />
-
-        <label for="tipo">Tipo:</label>
-        <select id="tipo" name="pessoa.TipoID" class="form-control">
-            @foreach (var tipo in ViewBag.TipoUsuario)
-            {
-                <option value="@tipo.ID">@tipo.Nome</option>
-            }
-        </select>
+        <div class="coluna1">
+            <label for="nome">Nome:</label>
+            @Html.ValidationMessage("pessoa.Nome")
+            <input id="nome" name="pessoa.Nome" class="form-control tamanho-input" />
 
 
-        <label for="email">Email:</label>
-        <input id="email" name="email" class="form-control" />
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="pessoa.Sexo" class="form-control">
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
 
+            <label for="dataNascimento">Data de nascimento:</label>
+            @Html.ValidationMessage("pessoa.DataNascimento")
+            <input id="dataNascimento" name="pessoa.DataNascimento" class="form-control tamanho-input" />
+
+            <label for="cpf">CPF:</label>
+            @Html.ValidationMessage("pessoa.CPF")
+            <input id="cpf" name="pessoa.CPF" class="form-control tamanho-input" />
+
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="pessoa.TipoID" class="form-control">
+                @foreach (var tipo in ViewBag.TipoUsuario)
+                {
+                    <option value="@tipo.ID">@tipo.Nome</option>
+                }
+            </select>
+        </div>
+
+        <div class="coluna2">
+            <label for="rua">Rua:</label>
+            <input id="rua" name="pessoa.Rua" class="form-control" />
+
+            <label for="bairro">Bairro:</label>
+            <input id="bairro" name="pessoa.Bairro" class="form-control" />
+
+            <label for="numeroLogradouro">Numero Logradouro:</label>
+            <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" class="form-control" />
+
+            <label for="complemento">Complemento:</label>
+            <input id="complemento" name="pessoa.Complemento" class="form-control" />
+
+            <label for="email">Email:</label>
+            <input id="email" name="email" class="form-control" />
+        </div>        
     </div>
-    <input type="submit" id="salvar-pf" class="form-control"/>
+
+    <input type="submit" id="salvar-pf" class="form-control center-block ajustar-botao" />
 </form>
     
 <script src="~/Scripts/jquery-3.3.1.js"></script>

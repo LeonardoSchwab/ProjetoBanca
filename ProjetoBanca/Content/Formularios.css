@@ -1,0 +1,20 @@
+﻿body {
+}
+
+.coluna1{
+    float: left;
+    margin-right : 20%;
+    margin-left : 5%;
+}
+
+.coluna2{
+
+}
+
+.tamanho-input{
+    width : 280px;
+}
+
+.ajustar-botao {
+    margin-top: 6%;
+}

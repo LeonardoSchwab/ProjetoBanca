@@ -6,39 +6,44 @@
 
 <form class="margem-superior" id="cad-produto" action="/Produto/Adiciona" method="post">
     <div class="form-group">
-        <label for="nome">Nome:</label>
-        @Html.ValidationMessage("pessoa.Nome")
-        <input id="nome" name="produto.Nome" class="form-control" />
+        <div class="coluna1">
+            <label for="nome">Nome:</label>
+            @Html.ValidationMessage("pessoa.Nome")
+            <input id="nome" name="produto.Nome" class="form-control tamanho-input" />
+        
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="produto.CategoriaID" class="form-control tamanho-input">
+                @foreach (var categoria in ViewBag.Categoria)
+                {
+                    <option value="@categoria.ID">@categoria.Nome</option>
+                }
+            </select>
 
-        <label for="preco">Preço:</label>
-        @Html.ValidationMessage("pessoa.Preco")
-        <input id="preco" name="produto.Preco" class="form-control" />
+            <label for="fornecedor">Fornecedor:</label>
+            <select id="fornecedor" name="produto.FornecedorID" class="form-control tamanho-input">
+                @foreach (var fornecedor in ViewBag.Fornecedor)
+                {
+                    <option value="@fornecedor.ID">@fornecedor.Nome</option>
+                }
+            </select>
+        </div>
 
-        <label for="quantidade">Quantidade:</label>
-        @Html.ValidationMessage("pessoa.Quantidade")
-        <input id="quantidade" name="produto.Quantidade" class="form-control" />
+        <div class="coluna2">
+            <label for="preco">Preço:</label>
+            @Html.ValidationMessage("pessoa.Preco")
+            <input id="preco" name="produto.Preco" class="form-control" />
 
-        <label for="unidade">Unidade:</label>
-        @Html.ValidationMessage("pessoa.Unidade")
-        <input id="unidade" name="produto.Unidade" class="form-control" />
+            <label for="quantidade">Quantidade:</label>
+            @Html.ValidationMessage("pessoa.Quantidade")
+            <input id="quantidade" name="produto.Quantidade" class="form-control" />
 
-        <label for="categoria">Categoria:</label>
-        <select id="categoria" name="produto.CategoriaID" class="form-control">
-            @foreach (var categoria in ViewBag.Categoria)
-            {
-                <option value="@categoria.ID">@categoria.Nome</option>
-            }
-        </select>
+            <label for="unidade">Unidade:</label>
+            @Html.ValidationMessage("pessoa.Unidade")
+            <input id="unidade" name="produto.Unidade" class="form-control" />
+        </div>
 
-        <label for="fornecedor">Fornecedor:</label>
-        <select id="fornecedor" name="produto.FornecedorID" class="form-control">
-            @foreach (var fornecedor in ViewBag.Fornecedor)
-            {
-                <option value="@fornecedor.ID">@fornecedor.Nome</option>
-            }
-        </select>
     </div>
-    <input type="submit" id="salvar-produto" class="form-control" />
+    <input type="submit" id="salvar-produto" class="form-control center-block ajustar-botao" />
 </form>
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>

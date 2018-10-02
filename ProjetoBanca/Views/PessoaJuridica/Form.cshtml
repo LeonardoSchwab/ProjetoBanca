@@ -6,39 +6,43 @@
 
 <form class="margem-superior" id="cad-pj" action="/PessoaJuridica/Adiciona" method="post">
     <div class="form-group">
-        <label for="nome">Nome:</label>
-        @Html.ValidationMessage("pessoa.Nome")
-        <input id="nome" name="pessoa.Nome" class="form-control" />
 
-        <label for="rua">Rua:</label>
-        <input id="rua" name="pessoa.Rua" class="form-control" />
+        <div class="coluna1">
+            <label for="nome">Nome:</label>
+            @Html.ValidationMessage("pessoa.Nome")
+            <input id="nome" name="pessoa.Nome" class="form-control tamanho-input" />
 
-        <label for="bairro">Bairro:</label>
-        <input id="bairro" name="pessoa.Bairro" class="form-control" />
+            <label for="cnpj">CNPJ:</label>
+            @Html.ValidationMessage("pessoa.CNPJ")
+            <input id="cnpj" name="pessoa.CNPJ" class="form-control tamanho-input" />
 
-        <label for="numeroLogradouro">Numero Logradouro:</label>
-        <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" class="form-control" />
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="pessoa.Sexo" class="form-control tamanho-input">
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
 
-        <label for="complemento">Complemento:</label>
-        <input id="complemento" name="pessoa.Complemento" class="form-control" />
+            <label for="preco">Preco:</label>
+            @Html.ValidationMessage("pessoa.Preco")
+            <input id="preco" name="pessoa.Preco" class="form-control tamanho-input" />
+        </div>
 
-        <label for="cnpj">CNPJ:</label>
-        @Html.ValidationMessage("pessoa.CNPJ")
-        <input id="cnpj" name="pessoa.CNPJ" class="form-control" />
+        <div class="coluna2">
+            <label for="rua">Rua:</label>
+            <input id="rua" name="pessoa.Rua" class="form-control" />
 
-        <label for="sexo">Sexo:</label>
-        <select id="sexo" name="pessoa.Sexo" class="form-control">
-            <option value="M">M</option>
-            <option value="F">F</option>
-        </select>
+            <label for="bairro">Bairro:</label>
+            <input id="bairro" name="pessoa.Bairro" class="form-control" />
 
+            <label for="numeroLogradouro">Numero Logradouro:</label>
+            <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" class="form-control" />
 
-        <label for="preco">Preco:</label>
-        @Html.ValidationMessage("pessoa.Preco")
-        <input id="preco" name="pessoa.Preco" class="form-control" />
+            <label for="complemento">Complemento:</label>
+            <input id="complemento" name="pessoa.Complemento" class="form-control" />
+        </div>
 
     </div>
-    <input type="submit" id="salvar-pj" class="form-control" />
+    <input type="submit" id="salvar-pj" class="form-control center-block ajustar-botao" />
 </form>
     
 <script src="~/Scripts/jquery-3.3.1.js"></script>

@@ -1,0 +1,38 @@
+﻿body {
+}
+
+.arrumando-topbar {
+    padding: 60px 0px;
+}
+
+.arrumando-hoc {
+    margin: -4% 0%;
+}
+
+.arrumando-espaçoBranco{
+    height: 0px;
+}
+
+.tamanho-link{
+    font-size: 14px;
+    position : absolute;
+    top : 50px;
+}
+
+.nomeAplicacao{
+    position: absolute;
+    left: 40px;
+    font-size: 40px;
+    top: 30px;
+}
+
+.rodape {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;    
+    background-color: black;
+    color: white;
+    text-align: center;
+}

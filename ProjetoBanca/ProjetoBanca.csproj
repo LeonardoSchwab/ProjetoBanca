@@ -282,6 +282,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ArrumandoLayout.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -359,6 +360,8 @@
     <Content Include="Content\dodmond\pages\index.html" />
     <Content Include="Content\dodmond\pages\sidebar-left.html" />
     <Content Include="Content\dodmond\pages\sidebar-right.html" />
+    <Content Include="Content\Formularios.css" />
+    <Content Include="Content\Listas.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
