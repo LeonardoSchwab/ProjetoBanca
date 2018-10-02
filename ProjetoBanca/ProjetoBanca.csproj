@@ -265,10 +265,6 @@
     <Compile Include="Migrations\20180927185415_Login.designer.cs">
       <DependentUpon>20180927185415_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20181002145008_ColaboradorID.cs" />
-    <Compile Include="Migrations\20181002145008_ColaboradorID.designer.cs">
-      <DependentUpon>20181002145008_ColaboradorID.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\ProjetoContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Login.cs" />
