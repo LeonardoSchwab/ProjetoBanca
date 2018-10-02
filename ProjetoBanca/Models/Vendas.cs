@@ -16,6 +16,8 @@ namespace ProjetoBanca.Models
         public int Quantidade{ get; set; }
         [Required]
         public DateTime Data { get; set; }
+        public int ColaboradorID { get; set; }
+        public PessoaFisica Colaborador { get; set; }
 
         public Vendas()
         {

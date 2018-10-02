@@ -10,14 +10,18 @@ $("#enviar-carrinho").click(function (event) {
 
     var linha = novaLinha();
     linha.find(".botao-removerLinha").click(function () {
-        precoTotal -= ($(".precoUnitario").text() * $(".quantidade").text());
+        console.log(precoTotal);
+        precoTotal -= parseInt($(this).parent().parent().find(".precoUnitario").text() * $(this).parent().parent().find(".quantidade").text());
         $("#precoTotal").val(precoTotal);
 
-        itemsTotal -= parseInt($(".quantidade").text());
+        itemsTotal -= parseInt($(this).parent().parent().find(".quantidade").text());
         $("#quantidadeTotal").val(itemsTotal);
 
         linha.remove();
     });
+
+    $("#precoUnitario").val(" ");
+    $("#quantidade").val(" ");
 });
 
 $("#finalizar-compra").click(function (event) {

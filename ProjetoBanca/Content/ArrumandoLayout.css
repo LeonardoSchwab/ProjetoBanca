@@ -2,11 +2,11 @@
 }
 
 .arrumando-topbar {
-    padding: 60px 0px;
+    padding: 55px 0px;
 }
 
 .arrumando-hoc {
-    margin: -4% 0%;
+    margin: -5% 0%;
 }
 
 .arrumando-espaçoBranco{
@@ -16,7 +16,8 @@
 .tamanho-link{
     font-size: 14px;
     position : absolute;
-    top : 50px;
+    top : 40px;
+    right: 30px;
 }
 
 .nomeAplicacao{
@@ -30,9 +31,10 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 100px;
+    height: 70px;
     width: 100%;    
     background-color: black;
     color: white;
     text-align: center;
 }
+

@@ -249,6 +249,7 @@
     <Compile Include="DAO\VendasDAO.cs" />
     <Compile Include="Filtros\AutorizacaoFilterAttribute.cs" />
     <Compile Include="Filtros\AutorizacaoFilterColab.cs" />
+    <Compile Include="Filtros\SessaoUsuario.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -264,9 +265,9 @@
     <Compile Include="Migrations\20180927185415_Login.designer.cs">
       <DependentUpon>20180927185415_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20181001000327_Email.cs" />
-    <Compile Include="Migrations\20181001000327_Email.designer.cs">
-      <DependentUpon>20181001000327_Email.cs</DependentUpon>
+    <Compile Include="Migrations\20181002145008_ColaboradorID.cs" />
+    <Compile Include="Migrations\20181002145008_ColaboradorID.designer.cs">
+      <DependentUpon>20181002145008_ColaboradorID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ProjetoContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />

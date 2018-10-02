@@ -9,16 +9,17 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
-    [AutorizacaoFilterColab]
+    [AutorizacaoFilterColab]    
     public class CategoriaController : Controller
     {
         // GET: Categoria
         public ActionResult Index()
         {
+            ViewBag.Colab = SessaoUsuario.UsuarioLogado();
             var categoriaDAO = new CategoriaDAO();
             var categorias = categoriaDAO.Lista();
             ViewBag.Categoria = categorias;
-            ViewBag.Colaborador = (Login)Session["colabLogado"];
+            ViewBag.Colaborador = (Login)Session["colabLogado"];            
             return View();
         }
         public ActionResult Form()

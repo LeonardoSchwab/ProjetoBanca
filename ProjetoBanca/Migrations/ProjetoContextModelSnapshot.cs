@@ -71,8 +71,6 @@ namespace ProjetoBanca.Migrations
                     b.Property<string>("DataNascimento")
                         .IsRequired();
 
-                    b.Property<string>("Email");
-
                     b.Property<string>("Nome")
                         .IsRequired();
 
@@ -223,8 +221,8 @@ namespace ProjetoBanca.Migrations
 
             modelBuilder.Entity("ProjetoBanca.Models.Login", b =>
                 {
-                    b.HasOne("ProjetoBanca.Models.PessoaFisica", "PessoaFisica")
-                        .WithOne("Login")
+                    b.HasOne("ProjetoBanca.Models.PessoaFisica", "Usuario")
+                        .WithOne("login")
                         .HasForeignKey("ProjetoBanca.Models.Login", "PessoaFisicaID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
