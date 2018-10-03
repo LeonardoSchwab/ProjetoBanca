@@ -35,3 +35,14 @@ $(".botao-remover").click(function () {
         });
     }
 });
+
+
+$("editar-categoria").click(function () {
+    var id = $("#edita-categoria").find("#id").val();
+    var nome = $("#edita-categoria").find("#nome").val();
+    
+    var dados = { ID: id, Nome: nome };
+    
+    $.post("http://localhost:62680/Categoria/Editar", dados, function () {
+    });
+});

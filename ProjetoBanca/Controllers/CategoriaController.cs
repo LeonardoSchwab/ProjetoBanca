@@ -57,10 +57,9 @@ namespace ProjetoBanca.Controllers
             return View();
         }
 
-        public ActionResult Editar(int id, Categoria categoria)
+        public ActionResult Editar(Categoria categoria)
         {
             var categoriaDAO = new CategoriaDAO();
-            categoria.ID = id;
             categoriaDAO.Atualizar(categoria);
 
             var categorias = categoriaDAO.Lista();

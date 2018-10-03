@@ -5,13 +5,12 @@
 <form class="margem-superior" action="/Categoria/Editar" method="post" id="edita-categoria">
     <div class="form-group">
         <label for="id">ID:</label>
-        <input id="id" name="id" value=@ViewBag.Categoria.ID class="form-control" disabled/>
+        <input id="id" name="categoria.ID" value=@ViewBag.Categoria.ID class="form-control" disabled/>
         <label for="nome">Nome:</label>
         <input id="nome" name="categoria.Nome" value=@ViewBag.Categoria.Nome class="form-control" />
     </div>
     <input type="submit" id="editar-categoria" class="form-control" />
 </form>
-
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 <script src="~/Scripts/Meus scripts/Scripts-categoria/main.js"></script>

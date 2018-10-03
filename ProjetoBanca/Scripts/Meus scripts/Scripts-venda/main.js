@@ -2,26 +2,37 @@
 var itemsTotal = 0;
 $("#enviar-carrinho").click(function (event) {
     event.preventDefault();    
-    precoTotal += ($("#precoUnitario").val() * $("#quantidade").val());
-    $("#precoTotal").val(precoTotal);
 
-    itemsTotal += parseInt($("#quantidade").val());
-    $("#quantidadeTotal").val(itemsTotal);
+    $preco = $("#precoUnitario").val();
+    $quantidade = $("#quantidade").val();
 
-    var linha = novaLinha();
-    linha.find(".botao-removerLinha").click(function () {
-        console.log(precoTotal);
-        precoTotal -= parseInt($(this).parent().parent().find(".precoUnitario").text() * $(this).parent().parent().find(".quantidade").text());
+    if ($preco && $quantidade) {
+
+        precoTotal += ($("#precoUnitario").val() * $("#quantidade").val());
         $("#precoTotal").val(precoTotal);
 
-        itemsTotal -= parseInt($(this).parent().parent().find(".quantidade").text());
+        itemsTotal += parseInt($("#quantidade").val());
         $("#quantidadeTotal").val(itemsTotal);
 
-        linha.remove();
-    });
+        var linha = novaLinha();
+        linha.find(".botao-removerLinha").click(function () {
+            console.log(precoTotal);
+            precoTotal -= parseInt($(this).parent().parent().find(".precoUnitario").text() * $(this).parent().parent().find(".quantidade").text());
+            $("#precoTotal").val(precoTotal);
 
-    $("#precoUnitario").val(" ");
-    $("#quantidade").val(" ");
+            itemsTotal -= parseInt($(this).parent().parent().find(".quantidade").text());
+            $("#quantidadeTotal").val(itemsTotal);
+
+            linha.remove();
+        });
+
+        $("#precoUnitario").val("");
+        $("#quantidade").val("");
+        $(".erro").hide();
+    }
+    else {
+        $(".erro").show();
+    }
 });
 
 $("#finalizar-compra").click(function (event) {
@@ -34,8 +45,8 @@ $("#finalizar-compra").click(function (event) {
     //var idPRODUTO = $("tbody").find("tr").find(".produto").val();
 
     var dadosVenda = { PrecoTotal: precoTotal, Quantidade: quantidadeTotal /*idProduto*/};
-
-    $.post("http://localhost:62680/Venda/Adiciona", dadosVenda, function () {
+    /////////////////////////////////////////////////////////////////////////////////
+    $.post("http://localhost:62680/Produto/VerificaEstoque", dadosVenda, function () {
         alert("Venda cadastrada com sucesso!");
         var linhas = $("tbody").find("tr");
 

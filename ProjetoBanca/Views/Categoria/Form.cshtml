@@ -5,10 +5,10 @@
 
 
 <form class="margem-superior" action="/Categoria/Adiciona" method="post" id="cad-categoria">
-    <div class="form-group" >
-        <label for="nome" style="margin-left: 36%;">Nome:</label>
-        @Html.ValidationMessage("categoria.Nome")
-        <input id="nome" name="categoria.Nome" class="form-control center-block" />        
+    <div class="form-group text-center">
+        <label for="nome" style="margin-right: 27%;">Nome:</label>
+        <input id="nome" name="categoria.Nome" class="form-control center-block" />
+        <span style="margin-right: 4%;">@Html.ValidationMessage("categoria.Nome")</span>
     </div>
     <input type="submit" id="salvar-categoria" class="form-control center-block ajustar-botao" />
 </form>

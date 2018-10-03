@@ -23,21 +23,22 @@
         <div class="row">
             <div class="col-md-3">
                 <label for="select-produtos">Produtos:</label>
-                <select id="select-produtos" class="form-control">
+                <select id="select-produtos" class="form-control">                    
                     @foreach (var produto in ViewBag.Produto)
                     {
                         <option value=@produto.ID>@produto.Nome</option>
                     }
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3">                 
                 <label for="precoUnitario">Preço unitário:</label>
-                <input id="precoUnitario" name="precoUnitario" class="form-control" />
+                <input id="precoUnitario" name="precoUnitario" class="form-control" />                
             </div>
             <div class="col-md-3">
                 <label for="quantidade">Quantidade:</label>
                 <input id="quantidade" name="quantidade" class="form-control" />
             </div>
+            <span class="erro" style="display:none;">Preencha os campos de preço e quantidade!</span>
         </div>
     </div>
 

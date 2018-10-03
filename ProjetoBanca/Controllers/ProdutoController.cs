@@ -78,6 +78,20 @@ namespace ProjetoBanca.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult VerificaEstoque(List<int> produtosID, List<int> quantidades)
+        {
+            var produtoDAO = new ProdutoDAO();
+            var listaProdutos = produtoDAO.GetProdutos(produtosID);
+            for (var i = 0; i <= listaProdutos.Count; i++)
+            {
+                if(listaProdutos[i].Estoque >= quantidades[i])
+                {
+                    return RedirectToAction("Adiciona", "Venda");
+                }                
+            }
+            return RedirectToAction("Venda", "Venda");
+        }
+
         /*public ActionResult BaixaEstoque(int id, int quantidade)
         {
             var produtoDAO = new ProdutoDAO();

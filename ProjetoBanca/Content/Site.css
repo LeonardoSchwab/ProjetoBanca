@@ -30,3 +30,14 @@ textarea {
 .margem-superior{
     margin-top: -20px;
 }
+
+.erro {    
+    font-size: 18px;
+    color: red;
+    top: 70px;
+}
+
+.field-validation-error{
+    font-size: 18px;
+    color:red;
+}
