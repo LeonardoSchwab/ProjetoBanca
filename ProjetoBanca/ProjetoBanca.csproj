@@ -265,6 +265,14 @@
     <Compile Include="Migrations\20180927185415_Login.designer.cs">
       <DependentUpon>20180927185415_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20181002194911_ColaboradorID.cs" />
+    <Compile Include="Migrations\20181002194911_ColaboradorID.designer.cs">
+      <DependentUpon>20181002194911_ColaboradorID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20181002195343_Estoque.cs" />
+    <Compile Include="Migrations\20181002195343_Estoque.designer.cs">
+      <DependentUpon>20181002195343_Estoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ProjetoContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Login.cs" />

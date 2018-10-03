@@ -9,36 +9,38 @@
 
         <div class="coluna1">
             <label for="nome">Nome:</label>
-            @Html.ValidationMessage("pessoa.Nome")
             <input id="nome" name="pessoa.Nome" class="form-control tamanho-input" />
-
+            @Html.ValidationMessage("pessoa.Nome")
+            <br />
             <label for="cnpj">CNPJ:</label>
-            @Html.ValidationMessage("pessoa.CNPJ")
             <input id="cnpj" name="pessoa.CNPJ" class="form-control tamanho-input" />
-
+            @Html.ValidationMessage("pessoa.CNPJ")
+            <br />
             <label for="sexo">Sexo:</label>
             <select id="sexo" name="pessoa.Sexo" class="form-control tamanho-input">
                 <option value="M">M</option>
                 <option value="F">F</option>
             </select>
-
+            <br />
             <label for="preco">Preco:</label>
-            @Html.ValidationMessage("pessoa.Preco")
             <input id="preco" name="pessoa.Preco" class="form-control tamanho-input" />
+            @Html.ValidationMessage("pessoa.Preco")
+            <br />
         </div>
 
         <div class="coluna2">
             <label for="rua">Rua:</label>
-            <input id="rua" name="pessoa.Rua" class="form-control" />
-
+            <input id="rua" name="pessoa.Rua" class="form-control tamanho-input" />
+            <br />
             <label for="bairro">Bairro:</label>
-            <input id="bairro" name="pessoa.Bairro" class="form-control" />
-
+            <input id="bairro" name="pessoa.Bairro" class="form-control tamanho-input" />
+            <br />
             <label for="numeroLogradouro">Numero Logradouro:</label>
-            <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" class="form-control" />
-
+            <input id="numeroLogradouro" name="pessoa.NumeroLogradouro" class="form-control tamanho-input" />
+            <br />
             <label for="complemento">Complemento:</label>
-            <input id="complemento" name="pessoa.Complemento" class="form-control" />
+            <input id="complemento" name="pessoa.Complemento" class="form-control tamanho-input" />
+            <br />
         </div>
 
     </div>

@@ -27,10 +27,13 @@ $("#enviar-carrinho").click(function (event) {
 $("#finalizar-compra").click(function (event) {
     //event.preventDefault();
 
+    //var linhaS = $("tbody").find("tr");
+
     var precoTotal = $("#precoTotal").val();
     var quantidadeTotal = $("#quantidadeTotal").val();
+    //var idPRODUTO = $("tbody").find("tr").find(".produto").val();
 
-    var dadosVenda = { PrecoTotal: precoTotal, Quantidade: quantidadeTotal };
+    var dadosVenda = { PrecoTotal: precoTotal, Quantidade: quantidadeTotal /*idProduto*/};
 
     $.post("http://localhost:62680/Venda/Adiciona", dadosVenda, function () {
         alert("Venda cadastrada com sucesso!");
@@ -40,11 +43,15 @@ $("#finalizar-compra").click(function (event) {
             var produtoId = $(this).find(".produto").val();
             var dadoProduto = { idProduto: produtoId }
 
-            $.post("http://localhost:62680/Venda/AdicionaProdutoVenda", dadoProduto, function () {
-                
-            }).fail(function () {
-                
+            $.post("http://localhost:62680/Venda/AdicionaProdutoVenda", dadoProduto, function () {                
             });
+
+            /*var quantidade = $(this).find(".quantidade").val();
+            var dados = { id: produtoId, quantidade: quantidade }
+
+            $.post("http://localhost:62680/Produto/BaixaEstoque", dados, function () {
+            });*/
+
         });
     }).fail(function () {
         alert("Falha ao cadastrar a venda!");

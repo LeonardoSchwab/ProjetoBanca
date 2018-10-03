@@ -8,9 +8,9 @@
     <div class="form-group">
         <div class="coluna1">
             <label for="nome">Nome:</label>
-            @Html.ValidationMessage("pessoa.Nome")
             <input id="nome" name="produto.Nome" class="form-control tamanho-input" />
-        
+            @Html.ValidationMessage("produto.Nome")
+            <br />
             <label for="categoria">Categoria:</label>
             <select id="categoria" name="produto.CategoriaID" class="form-control tamanho-input">
                 @foreach (var categoria in ViewBag.Categoria)
@@ -18,7 +18,7 @@
                     <option value="@categoria.ID">@categoria.Nome</option>
                 }
             </select>
-
+            <br />
             <label for="fornecedor">Fornecedor:</label>
             <select id="fornecedor" name="produto.FornecedorID" class="form-control tamanho-input">
                 @foreach (var fornecedor in ViewBag.Fornecedor)
@@ -26,20 +26,27 @@
                     <option value="@fornecedor.ID">@fornecedor.Nome</option>
                 }
             </select>
+            <br />
         </div>
 
         <div class="coluna2">
             <label for="preco">Preço:</label>
-            @Html.ValidationMessage("pessoa.Preco")
-            <input id="preco" name="produto.Preco" class="form-control" />
-
+            <input id="preco" name="produto.Preco" class="form-control tamanho-input" />
+            @Html.ValidationMessage("produto.Preco")
+            <br />
             <label for="quantidade">Quantidade:</label>
-            @Html.ValidationMessage("pessoa.Quantidade")
-            <input id="quantidade" name="produto.Quantidade" class="form-control" />
-
+            <input id="quantidade" name="produto.Quantidade" class="form-control tamanho-input" />
+            @Html.ValidationMessage("produto.Quantidade")
+            <br />
             <label for="unidade">Unidade:</label>
-            @Html.ValidationMessage("pessoa.Unidade")
-            <input id="unidade" name="produto.Unidade" class="form-control" />
+            <input id="unidade" name="produto.Unidade" class="form-control tamanho-input" />
+            @Html.ValidationMessage("produto.Unidade")
+            <br />            
+            <label for="estoque">Estoque:</label>
+            <input id="estoque" name="produto.Estoque" class="form-control tamanho-input" />
+            @Html.ValidationMessage("produto.Estoque")
+            @Html.ValidationMessage("EstoqueQuantidadeInvalido")
+            <br />
         </div>
 
     </div>

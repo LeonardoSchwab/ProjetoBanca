@@ -8,7 +8,7 @@
 }
 
 .coluna2{
-
+    float : right;
 }
 
 .tamanho-input{
@@ -17,6 +17,7 @@
 
 .ajustar-botao {
     margin-top: 6%;
+    clear : both;
 }
 
 .centralizando-menu{

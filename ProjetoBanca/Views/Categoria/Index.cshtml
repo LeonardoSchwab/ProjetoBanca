@@ -8,19 +8,19 @@
         <tr>
             <th>Id</th>
             <th>Nome</th>
-            <th>Editar</th>
+            <!--<th>Editar</th>-->
             <th>Remover</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var categoria in ViewBag.Categoria)
         {
-            <tr>
-                <td class="id">@categoria.ID</td>
-                <td class="nome">@categoria.Nome</td>
-                <td><a class="botao-remover" href="#">Remover</a></td>
-                <td><a class="botao-editar" href="http://localhost:62680/Categoria/Edita?id=@categoria.ID">Editar</a></td>
-            </tr>
+        <tr>
+            <td class="id">@categoria.ID</td>
+            <td class="nome">@categoria.Nome</td>
+            <td><a class="botao-remover" href="#">Remover</a></td>
+            <!--<td><a class="botao-editar" href="http://localhost:62680/Categoria/Edita?id=@categoria.ID">Editar</a></td>-->
+        </tr>
         }
     </tbody>
 </table>

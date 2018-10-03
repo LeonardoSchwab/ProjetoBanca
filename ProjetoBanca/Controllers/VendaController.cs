@@ -27,16 +27,19 @@ namespace ProjetoBanca.Controllers
         }
         public ActionResult Venda()
         {
+            ViewBag.Colaborador = SessaoUsuario.UsuarioLogado();
             var produtosDAO = new ProdutoDAO();
             var produtos = produtosDAO.Lista();
             ViewBag.Produto = produtos;
             return View();
         }
-        public ActionResult Adiciona(Vendas venda)
+        public ActionResult Adiciona(Vendas venda, int idProduto)
         {
             if (ModelState.IsValid)
             {
+                var colaborador = SessaoUsuario.UsuarioLogado();                
                 var vendasDAO = new VendasDAO();
+                venda.ColaboradorID = colaborador.ID;
                 venda.Data = DateTime.Now;
                 vendasDAO.Adicionar(venda);
                 return RedirectToAction("Index");

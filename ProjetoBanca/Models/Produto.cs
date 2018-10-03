@@ -17,6 +17,8 @@ namespace ProjetoBanca.Models
         public string Unidade{ get; set; }
         [Required(ErrorMessage = "Quantidade precisa ser digitada!")]
         public int Quantidade { get; set; }
+        [Required(ErrorMessage = "Estoque precisa ser digitado!")]
+        public int Estoque { get; set; }
         public int CategoriaID { get; set; }
         public Categoria Categoria { get; private set; }
         //public int PromocaoID { get; set; }
@@ -24,7 +26,7 @@ namespace ProjetoBanca.Models
         public int FornecedorID { get; set; }
         public PessoaJuridica Fornecedor { get; private set; }
         public IList<ProdutoVendas> Vendas { get; private set; }
-
+        
         public Produto()
         {
             this.Vendas = new List<ProdutoVendas>();

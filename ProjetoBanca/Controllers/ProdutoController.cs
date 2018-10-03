@@ -14,7 +14,7 @@ namespace ProjetoBanca.Controllers
     {
         // GET: Produto
         public ActionResult Index()
-        {
+        {            
             var produtoDAO = new ProdutoDAO();
             var produtos = produtoDAO.Lista();
             ViewBag.Produto = produtos;
@@ -41,6 +41,10 @@ namespace ProjetoBanca.Controllers
 
         public ActionResult Adiciona(Produto produto)
         {
+            if(produto.Estoque < produto.Quantidade)
+            {
+                ModelState.AddModelError("EstoqueQuantidadeInvalido", "O valor do estoque deve ser igual ou maior que a quantidade!");
+            }
             if (ModelState.IsValid)
             {
                 var produtoDAO = new ProdutoDAO();
@@ -73,5 +77,14 @@ namespace ProjetoBanca.Controllers
             produtoDAO.Remover(produto);
             return RedirectToAction("Index");
         }
+
+        /*public ActionResult BaixaEstoque(int id, int quantidade)
+        {
+            var produtoDAO = new ProdutoDAO();
+            var produto = produtoDAO.Buscar(id);
+            produto.Estoque -= quantidade;
+            produtoDAO.Atualizar(produto);
+            return View("Index");
+        }*/
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoBanca.DAO;
 
 namespace ProjetoBanca.Migrations
 {
     [DbContext(typeof(ProjetoContext))]
-    partial class ProjetoContextModelSnapshot : ModelSnapshot
+    [Migration("20181002194911_ColaboradorID")]
+    partial class ColaboradorID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,8 +129,6 @@ namespace ProjetoBanca.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CategoriaID");
-
-                    b.Property<int>("Estoque");
 
                     b.Property<int>("FornecedorID");
 
