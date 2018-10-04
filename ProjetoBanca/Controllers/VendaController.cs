@@ -33,25 +33,25 @@ namespace ProjetoBanca.Controllers
             ViewBag.Produto = produtos;
             return View();
         }
-        public ActionResult Adiciona(Vendas venda, int idProduto)
+        public ActionResult Adiciona(Vendas venda /*int idProduto*/)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 var colaborador = SessaoUsuario.UsuarioLogado();                
                 var vendasDAO = new VendasDAO();
                 venda.ColaboradorID = colaborador.ID;
                 venda.Data = DateTime.Now;
                 vendasDAO.Adicionar(venda);
                 return RedirectToAction("Index");
-            }
+            /*}
             else
             {
                 var produtosDAO = new ProdutoDAO();
                 var produtos = produtosDAO.Lista();
                 ViewBag.Produto = produtos;
                 
-                return View("Venda");
-            }
+                return RedirectToAction("Venda");
+            }*/
         }
         public ActionResult AdicionaProdutoVenda(int idProduto)
         {
@@ -61,7 +61,7 @@ namespace ProjetoBanca.Controllers
                 var ultimaVendaId = produtoVendasDAO.IdUltimaVenda();
                 var pv = new ProdutoVendas(idProduto, ultimaVendaId);
                 produtoVendasDAO.Adicionar(pv);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Venda");
             }
             else
             {

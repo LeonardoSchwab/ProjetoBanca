@@ -32,14 +32,15 @@ namespace ProjetoBanca.Controllers
             if (ModelState.IsValid) { 
                 var categoriaDAO = new CategoriaDAO();
                 categoriaDAO.Adicionar(categoria);
-                //return RedirectToAction("Index");
+                return RedirectToAction("Index");
+
             }
             else
             {
                 ViewBag.Categoria = categoria;
-                
+                return RedirectToAction("Form");
             }
-            return View("Form");
+
         }
         public ActionResult Remove(int id)
         {
@@ -64,7 +65,7 @@ namespace ProjetoBanca.Controllers
 
             var categorias = categoriaDAO.Lista();
             ViewBag.Categoria = categorias;
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 }

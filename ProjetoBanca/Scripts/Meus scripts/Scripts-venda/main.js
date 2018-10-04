@@ -16,7 +16,7 @@ $("#enviar-carrinho").click(function (event) {
 
         var linha = novaLinha();
         linha.find(".botao-removerLinha").click(function () {
-            console.log(precoTotal);
+            
             precoTotal -= parseInt($(this).parent().parent().find(".precoUnitario").text() * $(this).parent().parent().find(".quantidade").text());
             $("#precoTotal").val(precoTotal);
 
@@ -42,9 +42,10 @@ $("#finalizar-compra").click(function (event) {
 
     var precoTotal = $("#precoTotal").val();
     var quantidadeTotal = $("#quantidadeTotal").val();
-    //var idPRODUTO = $("tbody").find("tr").find(".produto").val();
-
-    var dadosVenda = { PrecoTotal: precoTotal, Quantidade: quantidadeTotal /*idProduto*/};
+    var idPRODUTO = $("tbody").find("tr").find(".produto").val();
+    var quantidades = $("tbody").find("tr").find(".quantidade").text();    
+    
+    var dadosVenda = { PrecoTotal: precoTotal, Quantidade: quantidadeTotal, produtosID: idPRODUTO, quantidades: quantidades };
     /////////////////////////////////////////////////////////////////////////////////
     $.post("http://localhost:62680/Produto/VerificaEstoque", dadosVenda, function () {
         alert("Venda cadastrada com sucesso!");
@@ -52,21 +53,22 @@ $("#finalizar-compra").click(function (event) {
 
         linhas.each(function () {
             var produtoId = $(this).find(".produto").val();
-            var dadoProduto = { idProduto: produtoId }
+            var dadoProduto = { idProduto: produtoId };
 
-            $.post("http://localhost:62680/Venda/AdicionaProdutoVenda", dadoProduto, function () {                
+            $.post("http://localhost:62680/Venda/AdicionaProdutoVenda", dadoProduto, function () {
+                var quantidade = $(this).find(".quantidade").val();
+                var dados = { id: produtoId, quantidade: quantidade };
+
+                $.post("http://localhost:62680/Produto/BaixaEstoque", dados, function () {
+                });
             });
 
-            /*var quantidade = $(this).find(".quantidade").val();
-            var dados = { id: produtoId, quantidade: quantidade }
-
-            $.post("http://localhost:62680/Produto/BaixaEstoque", dados, function () {
-            });*/
+            
 
         });
     }).fail(function () {
         alert("Falha ao cadastrar a venda!");
-    });       
+    });   
 
 });
 

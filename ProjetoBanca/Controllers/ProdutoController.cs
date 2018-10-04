@@ -43,7 +43,7 @@ namespace ProjetoBanca.Controllers
         {
             if(produto.Estoque < produto.Quantidade)
             {
-                ModelState.AddModelError("EstoqueQuantidadeInvalido", "O valor do estoque deve ser igual ou maior que a quantidade!");
+                ModelState.AddModelError("EstoqueQuantidadeInvalido", "Estoque deve ser maior/igual a quantidade!");
             }
             if (ModelState.IsValid)
             {
@@ -78,27 +78,27 @@ namespace ProjetoBanca.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult VerificaEstoque(List<int> produtosID, List<int> quantidades)
+        public ActionResult VerificaEstoque(Vendas venda, List<int> produtosID, List<int> quantidades)
         {
             var produtoDAO = new ProdutoDAO();
             var listaProdutos = produtoDAO.GetProdutos(produtosID);
-            for (var i = 0; i <= listaProdutos.Count; i++)
+            for (var i = 0; i < listaProdutos.Count; i++)
             {
                 if(listaProdutos[i].Estoque >= quantidades[i])
-                {
-                    return RedirectToAction("Adiciona", "Venda");
+                {                    
+                    return RedirectToAction("Adiciona", "Venda", venda);
                 }                
             }
             return RedirectToAction("Venda", "Venda");
         }
 
-        /*public ActionResult BaixaEstoque(int id, int quantidade)
+        public ActionResult BaixaEstoque(int id, int quantidade)
         {
             var produtoDAO = new ProdutoDAO();
             var produto = produtoDAO.Buscar(id);
             produto.Estoque -= quantidade;
             produtoDAO.Atualizar(produto);
-            return View("Index");
-        }*/
+            return RedirectToAction("Index", "Venda");
+        }
     }
 }

@@ -49,16 +49,17 @@ namespace ProjetoBanca.DAO
         }
         public IList<Produto> GetProdutos(IList<int> produtosID)
         {
-            var listaProdutos = new List<Produto>();
+            var produtos = new List<Produto>();
+            var listaProdutos = Lista();
             foreach(var p in produtosID)
             {
                 var produto = (from lp in listaProdutos
                                where lp.ID == p
                                select lp).FirstOrDefault();
 
-                listaProdutos.Add(produto);
+                produtos.Add(produto);
             }
-            return listaProdutos;
+            return produtos;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ProjetoBanca.Models
         public double PrecoTotal{ get; set; }
         [Required(ErrorMessage = "Quantidade precisa ser calculada. Insira um produto!")]
         public int Quantidade{ get; set; }
-        [Required]
+        
         public DateTime Data { get; set; }
         public int ColaboradorID { get; set; }
         public PessoaFisica Colaborador { get; set; }
