@@ -3,12 +3,12 @@ var itemsTotal = 0;
 $("#enviar-carrinho").click(function (event) {
     event.preventDefault();    
 
-    $preco = $("#precoUnitario").val();
+    $preco = $("#precoUnitario option:selected").text();
     $quantidade = $("#quantidade").val();
 
     if ($preco && $quantidade) {
 
-        precoTotal += ($("#precoUnitario").val() * $("#quantidade").val());
+        precoTotal += (parseInt($("#precoUnitario option:selected").text()) * $("#quantidade").val());
         $("#precoTotal").val(precoTotal);
 
         itemsTotal += parseInt($("#quantidade").val());
@@ -23,16 +23,17 @@ $("#enviar-carrinho").click(function (event) {
             itemsTotal -= parseInt($(this).parent().parent().find(".quantidade").text());
             $("#quantidadeTotal").val(itemsTotal);
 
-            linha.remove();
-        });
+            linha.remove();            
 
-        $("#precoUnitario").val("");
+        });
+        
         $("#quantidade").val("");
         $(".erro").hide();
     }
     else {
         $(".erro").show();
     }
+
 });
 
 $("#finalizar-compra").click(function (event) {
@@ -42,28 +43,27 @@ $("#finalizar-compra").click(function (event) {
 
     var precoTotal = $("#precoTotal").val();
     var quantidadeTotal = $("#quantidadeTotal").val();
-    var idPRODUTO = $("tbody").find("tr").find(".produto").val();
-    var quantidades = $("tbody").find("tr").find(".quantidade").text();    
+  /*ARRUMAR*/   var idPRODUTO = $("tbody").find("tr").find(".produto").val();
+  /*ARRUMAR*/  var quantidades = $("tbody").find("tr").find(".quantidade").text();
     
     var dadosVenda = { PrecoTotal: precoTotal, Quantidade: quantidadeTotal, produtosID: idPRODUTO, quantidades: quantidades };
     /////////////////////////////////////////////////////////////////////////////////
-    $.post("http://localhost:62680/Produto/VerificaEstoque", dadosVenda, function () {
+    $.post("http://localhost:62680/Produto/VerificaEstoque", dadosVenda, function (data) {
         alert("Venda cadastrada com sucesso!");
         var linhas = $("tbody").find("tr");
-
+        console.log(data);
         linhas.each(function () {
             var produtoId = $(this).find(".produto").val();
+            
             var dadoProduto = { idProduto: produtoId };
-
             $.post("http://localhost:62680/Venda/AdicionaProdutoVenda", dadoProduto, function () {
-                var quantidade = $(this).find(".quantidade").val();
-                var dados = { id: produtoId, quantidade: quantidade };
-
-                $.post("http://localhost:62680/Produto/BaixaEstoque", dados, function () {
-                });
             });
 
-            
+            var quantidade = $(this).find(".quantidade").text();
+            var dados = { id: produtoId, quantidade: quantidade };
+
+            $.post("http://localhost:62680/Produto/BaixaEstoque", dados, function () {
+            });            
 
         });
     }).fail(function () {
@@ -104,7 +104,7 @@ function novaLinha() {
     colunaProduto.val($("#select-produtos").val());
 
     colunaQuantidade.text($("#quantidade").val());
-    colunaPrecoUni.text($("#precoUnitario").val());
+    colunaPrecoUni.text($("#precoUnitario option:selected").text());
 
     var colunaRemover = $("<td>");
     var link = $("<a>").addClass("botao-removerLinha").attr("href", "#").text("D");
@@ -118,4 +118,19 @@ function novaLinha() {
     $tbody.append(linha);
     
     return linha;
+}
+
+$("#select-produtos").change(mudarPreco);
+
+function mudarPreco() {
+    var $selectProdutos = $("#select-produtos")[0];
+    var sProdutosIndex = $selectProdutos.selectedIndex;
+
+    var $precoUnitario = $("#precoUnitario")[0];
+
+    for (var i = 0; i < $precoUnitario.length; i++) {
+        if ($selectProdutos.options[sProdutosIndex].value == $precoUnitario.options[i].value) {
+            $precoUnitario.selectedIndex = i;
+        }
+    }
 }

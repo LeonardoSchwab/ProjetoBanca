@@ -31,7 +31,12 @@
             </div>
             <div class="col-md-3">
                 <label for="precoUnitario">Preço unitário:</label>
-                <input id="precoUnitario" name="precoUnitario" class="form-control" />
+                <select id="precoUnitario" name="precoUnitario" class="form-control" disabled>                
+                    @foreach(var produto in ViewBag.Produto)
+                    {
+                    <option value="@produto.ID">@produto.Preco</option>
+                    }
+                </select>
             </div>
             <div class="col-md-3">
                 <label for="quantidade">Quantidade:</label>
