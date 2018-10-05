@@ -31,10 +31,10 @@
             </div>
             <div class="col-md-3">
                 <label for="precoUnitario">Preço unitário:</label>
-                <select id="precoUnitario" name="precoUnitario" class="form-control" disabled>                
-                    @foreach(var produto in ViewBag.Produto)
+                <select id="precoUnitario" name="precoUnitario" class="form-control" disabled>
+                    @foreach (var produto in ViewBag.Produto)
                     {
-                    <option value="@produto.ID">@produto.Preco</option>
+                        <option value="@produto.ID">@produto.Preco</option>
                     }
                 </select>
             </div>
@@ -43,32 +43,50 @@
                 <input id="quantidade" name="quantidade" class="form-control" />
             </div>
             <span class="erro" style="display:none;">Preencha os campos de preço e quantidade!</span>
+
+            <div class="col-md-3">
+                <input type="submit" id="enviar-carrinho" value="Enviar pro carrinho" class="form-control botao-carrinho" />
+            </div>
         </div>
     </div>
 
-    <input type="submit" id="enviar-carrinho" value="Enviar pro carrinho" class="form-control" />
+    
 
     <br />
     <br />
 
     <div class="form-group">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="precoTotal">Preço total:</label>
                 <input id="precoTotal" name="venda.PrecoTotal" disabled class="form-control" />
                 @Html.ValidationMessage("venda.PrecoTotal")
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="quantidadeTotal">Items total:</label>
                 <input id="quantidadeTotal" name="venda.Quantidade" disabled class="form-control" />
                 @Html.ValidationMessage("venda.Quantidade")
             </div>
 
+            <div class="col-md-2">
+                <label for="pontosTotal">Pontos total:</label>
+                <input id="pontosTotal" name="pontosTotal" disabled class="form-control" />
+                @Html.ValidationMessage("venda.Quantidade")
+            </div>
+
             <div class="col-md-4">
-                <label for="colaborador">Colaborador:</label>
-
+                <label for="colaborador">Vendedor:</label>
                 <input id="colaborador" name="colaborador" disabled class="form-control" value="@ViewBag.Colaborador.Nome" />
+            </div>
 
+            <div class="col-md-3">
+                <label for="cliente">Cliente:</label>
+                <input id="cliente" name="cliente" disabled class="form-control" value="" />
+            </div>
+
+            <div class="col-md-2">
+                <label for="pontos">Pontos:</label>
+                <input id="pontos" name="pontos" disabled class="form-control" value="@ViewBag.Colaborador.Pontos" />
             </div>
 
         </div>

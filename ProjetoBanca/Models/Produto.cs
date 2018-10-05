@@ -19,6 +19,8 @@ namespace ProjetoBanca.Models
         public int Quantidade { get; set; }
         [Required(ErrorMessage = "Estoque precisa ser digitado!")]
         public int Estoque { get; set; }
+        //[Required]
+        public int Pontos { get; set; }
         public int CategoriaID { get; set; }
         public Categoria Categoria { get; private set; }
         //public int PromocaoID { get; set; }

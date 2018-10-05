@@ -26,7 +26,7 @@ namespace ProjetoBanca.Controllers
             return View();
         }
         public ActionResult Venda()
-        {
+        { 
             ViewBag.Colaborador = SessaoUsuario.UsuarioLogado();
             var produtosDAO = new ProdutoDAO();
             var produtos = produtosDAO.Lista();

@@ -34,6 +34,11 @@
             <input id="preco" name="produto.Preco" class="form-control tamanho-input" />
             @Html.ValidationMessage("produto.Preco")
             <br />
+            
+            <label for="pontos">Pontos:</label>
+            <input id="pontos" name="produto.Pontos" class="form-control tamanho-input" readonly />
+
+            <br />
             <label for="quantidade">Quantidade:</label>
             <input id="quantidade" name="produto.Quantidade" class="form-control tamanho-input" />
             @Html.ValidationMessage("produto.Quantidade")
@@ -41,8 +46,8 @@
             <label for="unidade">Unidade:</label>
             <input id="unidade" name="produto.Unidade" class="form-control tamanho-input" />
             @Html.ValidationMessage("produto.Unidade")
-            <br />            
-            <label for="estoque">Estoque:</label>
+            <br />
+            <label for="estoque">Quantidade máxima do estoque:</label>
             <input id="estoque" name="produto.Estoque" class="form-control tamanho-input" />
             @Html.ValidationMessage("produto.Estoque")
             @Html.ValidationMessage("EstoqueQuantidadeInvalido")

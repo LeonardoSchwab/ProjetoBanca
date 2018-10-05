@@ -43,8 +43,15 @@ $("#finalizar-compra").click(function (event) {
 
     var precoTotal = $("#precoTotal").val();
     var quantidadeTotal = $("#quantidadeTotal").val();
-  /*ARRUMAR*/   var idPRODUTO = $("tbody").find("tr").find(".produto").val();
-  /*ARRUMAR*/  var quantidades = $("tbody").find("tr").find(".quantidade").text();
+
+    var idPRODUTO = [];
+    var quantidades = [];
+    var lin = $("tbody").find("tr");
+    lin.each(function () {
+        /*ARRUMAR*/  idPRODUTO.push( $(this).find(".produto").val() );
+
+        /*ARRUMAR*/  quantidades.push( parseInt($(this).find(".quantidade").text()) );
+    });
     
     var dadosVenda = { PrecoTotal: precoTotal, Quantidade: quantidadeTotal, produtosID: idPRODUTO, quantidades: quantidades };
     /////////////////////////////////////////////////////////////////////////////////

@@ -36,3 +36,9 @@ $(".botao-remover").click(function () {
         });
     }
 });
+
+var pontos = 0;
+$("#preco").focusout(function () {
+    pontos = $(this).val() * 0.5;
+    $("#pontos").val(pontos);
+});

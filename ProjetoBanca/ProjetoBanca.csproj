@@ -273,6 +273,10 @@
     <Compile Include="Migrations\20181002195343_Estoque.designer.cs">
       <DependentUpon>20181002195343_Estoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20181005114324_PontosProduto.cs" />
+    <Compile Include="Migrations\20181005114324_PontosProduto.designer.cs">
+      <DependentUpon>20181005114324_PontosProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ProjetoContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Login.cs" />
@@ -367,6 +371,7 @@
     <Content Include="Content\dodmond\pages\sidebar-right.html" />
     <Content Include="Content\Formularios.css" />
     <Content Include="Content\Listas.css" />
+    <Content Include="Content\Vendas.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
