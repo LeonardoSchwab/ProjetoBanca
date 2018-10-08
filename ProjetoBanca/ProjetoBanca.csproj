@@ -249,6 +249,7 @@
     <Compile Include="DAO\VendasDAO.cs" />
     <Compile Include="Filtros\AutorizacaoFilterAttribute.cs" />
     <Compile Include="Filtros\AutorizacaoFilterColab.cs" />
+    <Compile Include="Filtros\PermissaoFunc.cs" />
     <Compile Include="Filtros\SessaoUsuario.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

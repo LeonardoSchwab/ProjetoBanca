@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
+    [PermissaoFunc]
     [AutorizacaoFilterColab]
     public class PessoaFisicaController : Controller
     {
@@ -25,11 +26,11 @@ namespace ProjetoBanca.Controllers
             var tipoDAO = new TipoUsuarioDAO();
             var tipos = tipoDAO.Lista();
             ViewBag.TipoUsuario = tipos;
-            ViewBag.PessoaFisica = new PessoaFisica();
+            ViewBag.Pessoa = new PessoaFisica();
             return View();
         }
         public ActionResult Adiciona(PessoaFisica pessoa, string email)
-        {
+        {            
             if (ModelState.IsValid) { 
                 var pessoaFisicaDAO = new PessoaFisicaDAO();
                 pessoaFisicaDAO.Adicionar(pessoa);

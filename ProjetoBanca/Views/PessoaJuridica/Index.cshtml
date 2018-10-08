@@ -13,7 +13,7 @@
             <th>Numero logradouro</th>
             <th>Complemento</th>
             <th>CNPJ</th>
-            <th>Preco</th>
+            
             <th>Editar</th>
             <th>Remover</th>
         </tr>
@@ -29,7 +29,7 @@
                 <td class="numeroLogradouro">@pessoa.NumeroLogradouro</td>
                 <td class="complemento">@pessoa.Complemento</td>
                 <td class="cnpj">@pessoa.CNPJ</td>
-                <td class="preco">@pessoa.Preco</td>
+                <td style="display:none;" class="preco">@pessoa.Preco</td>
                 <td><a class="botao-editar fa fa-edit" href="http://localhost:62680/PessoaJuridica/Edita?id=@pessoa.ID"></a></td>
                 <td><a class="botao-remover fa fa-close" href="#"></a></td>
             </tr>

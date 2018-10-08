@@ -13,7 +13,8 @@
             @Html.ValidationMessage("pessoa.Nome")
             <br />
             <label for="cnpj">CNPJ:</label>
-            <input id="cnpj" name="pessoa.CNPJ" class="form-control tamanho-input" value="@ViewBag.Pessoa.CNPJ"/>
+            <input id="cnpj" name="pessoa.CNPJ" class="form-control tamanho-input" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})"
+                   value="@ViewBag.Pessoa.CNPJ"/>
             @Html.ValidationMessage("pessoa.CNPJ")
             <br />
             <label for="sexo">Sexo:</label>
@@ -22,8 +23,8 @@
                 <option value="F">F</option>
             </select>
             <br />
-            <label for="preco">Preco:</label>
-            <input id="preco" name="pessoa.Preco" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Pessoa.Preco"/>
+            
+            <input style="display:none;" id="preco" name="pessoa.Preco" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Pessoa.Preco"/>
             @Html.ValidationMessage("pessoa.Preco")
             <br />
         </div>

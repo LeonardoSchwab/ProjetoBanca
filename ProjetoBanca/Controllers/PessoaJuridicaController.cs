@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
+    [PermissaoFunc]
     [AutorizacaoFilterColab]
     public class PessoaJuridicaController : Controller
     {
@@ -22,7 +23,7 @@ namespace ProjetoBanca.Controllers
         }
         public ActionResult Form()
         {
-            ViewBag.PessoaJuridica = new PessoaJuridica();
+            ViewBag.Pessoa = new PessoaJuridica();
             return View();
         }
         public ActionResult Adiciona(PessoaJuridica pessoa)
@@ -35,7 +36,7 @@ namespace ProjetoBanca.Controllers
             }
             else
             {
-                ViewBag.PessoaJuridica = pessoa;
+                ViewBag.Pessoa = pessoa;
                 return View("Form");
             }
         }

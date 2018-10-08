@@ -31,16 +31,16 @@
 
         <div class="coluna2">
             <label for="preco">Preço:</label>
-            <input id="preco" name="produto.Preco" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Produto.Preco"/>
+            <input id="preco" name="produto.Preco" class="form-control tamanho-input" type="number" min="1" value="@ViewBag.Produto.Preco"/>
             @Html.ValidationMessage("produto.Preco")
             <br />
             
-            <label for="pontos">Pontos:</label>
-            <input id="pontos" name="produto.Pontos" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Produto.Pontos"/>
+            
+            <input id="pontos" style="display:none;" name="produto.Pontos" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Produto.Pontos"/>
 
             <br />
             <label for="quantidade">Quantidade:</label>
-            <input id="quantidade" name="produto.Quantidade" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Produto.Quantidade"/>
+            <input id="quantidade" name="produto.Quantidade" class="form-control tamanho-input" type="number" min="1" value="@ViewBag.Produto.Quantidade"/>
             @Html.ValidationMessage("produto.Quantidade")
             <br />
             <label for="unidade">Unidade:</label>
@@ -48,7 +48,7 @@
             @Html.ValidationMessage("produto.Unidade")
             <br />
             <label for="estoque">Quantidade máxima do estoque:</label>
-            <input id="estoque" name="produto.Estoque" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Produto.Estoque"/>
+            <input id="estoque" name="produto.Estoque" class="form-control tamanho-input" type="number" min="1" value="@ViewBag.Produto.Estoque"/>
             @Html.ValidationMessage("produto.Estoque")
             @Html.ValidationMessage("EstoqueQuantidadeInvalido")
             <br />

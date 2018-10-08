@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace ProjetoBanca.Controllers
 {
+    [PermissaoFunc]
     [AutorizacaoFilterColab]    
     public class CategoriaController : Controller
     {
