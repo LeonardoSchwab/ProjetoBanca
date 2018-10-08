@@ -53,7 +53,7 @@ namespace ProjetoBanca.Controllers
         public ActionResult DeslogarColaborador()
         {
             Session["colabLogado"] = null;
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("LoginColaborador", "Login");
         }
 
         public ActionResult Logar(Login login)

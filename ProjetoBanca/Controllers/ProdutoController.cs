@@ -78,6 +78,37 @@ namespace ProjetoBanca.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Edita(int id)
+        {
+            var produtoDAO = new ProdutoDAO();
+            var produto = produtoDAO.Buscar(id);
+            ViewBag.Produto = produto;
+
+            var categoriaDAO = new CategoriaDAO();
+            var categorias = categoriaDAO.Lista();
+            ViewBag.Categoria = categorias;
+
+            var fornecedorDAO = new PessoaJuridicaDAO();
+            var fornecedores = fornecedorDAO.Lista();
+            ViewBag.Fornecedor = fornecedores;
+
+            var promocaoDAO = new PromocaoDAO();
+            var promocoes = promocaoDAO.Lista();
+            ViewBag.Promocao = promocoes;
+
+            return View();
+        }
+
+        public ActionResult Editar(Produto produto)
+        {
+            var produtoDAO = new ProdutoDAO();
+            produtoDAO.Atualizar(produto);
+
+            var produtos = produtoDAO.Lista();
+            ViewBag.Pessoa = produtos;
+            return RedirectToAction("Index");
+        }
+
         public ActionResult VerificaEstoque(Vendas venda, List<int> produtosID, List<int> quantidades)
         {
             var produtoDAO = new ProdutoDAO();

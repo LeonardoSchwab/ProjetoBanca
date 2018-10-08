@@ -33,7 +33,6 @@ namespace ProjetoBanca.Controllers
                 var categoriaDAO = new CategoriaDAO();
                 categoriaDAO.Adicionar(categoria);
                 return RedirectToAction("Index");
-
             }
             else
             {

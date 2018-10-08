@@ -29,7 +29,15 @@ namespace ProjetoBanca.DAO
         {
             using (var context = new ProjetoContext())
             {
-                context.PessoaJuridica.Update(pessoaJuridica);
+                var pessoa = context.PessoaJuridica.Find(pessoaJuridica.ID);
+                pessoa.Nome = pessoaJuridica.Nome;
+                pessoa.NumeroLogradouro = pessoaJuridica.NumeroLogradouro;
+                pessoa.Rua = pessoaJuridica.Rua;
+                pessoa.Bairro = pessoaJuridica.Bairro;
+                pessoa.Complemento = pessoaJuridica.Complemento;
+                pessoa.CNPJ = pessoaJuridica.CNPJ;
+                pessoa.Preco = pessoaJuridica.Preco;                
+
                 context.SaveChanges();
             }
         }

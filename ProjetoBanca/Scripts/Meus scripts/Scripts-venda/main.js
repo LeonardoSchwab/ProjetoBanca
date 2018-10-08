@@ -114,7 +114,7 @@ function novaLinha() {
     colunaPrecoUni.text($("#precoUnitario option:selected").text());
 
     var colunaRemover = $("<td>");
-    var link = $("<a>").addClass("botao-removerLinha").attr("href", "#").text("D");
+    var link = $("<a>").addClass("botao-removerLinha fa fa-close").attr("href", "#");
     colunaRemover.append(link);
 
     linha.append(colunaProduto);

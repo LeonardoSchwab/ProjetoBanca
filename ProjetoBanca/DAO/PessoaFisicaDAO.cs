@@ -30,7 +30,18 @@ namespace ProjetoBanca.DAO
         {
             using (var context = new ProjetoContext())
             {
-                context.PessoaFisica.Update(pessoaFisica);
+                var pessoa = context.PessoaFisica.Find(pessoaFisica.ID);
+                pessoa.Nome = pessoaFisica.Nome;
+                pessoa.NumeroLogradouro = pessoaFisica.NumeroLogradouro;
+                pessoa.Pontos = pessoaFisica.Pontos;
+                pessoa.Rua = pessoaFisica.Rua;
+                pessoa.Sexo = pessoaFisica.Sexo;
+                pessoa.TipoID = pessoaFisica.TipoID;
+                pessoa.Bairro = pessoaFisica.Bairro;
+                pessoa.Complemento = pessoaFisica.Complemento;
+                pessoa.CPF = pessoaFisica.CPF;
+                pessoa.DataNascimento = pessoaFisica.DataNascimento;                
+
                 context.SaveChanges();
             }
         }

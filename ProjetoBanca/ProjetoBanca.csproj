@@ -435,6 +435,9 @@
     <Content Include="Views\Venda\Venda.cshtml" />
     <Content Include="Views\Login\LoginColaborador.cshtml" />
     <Content Include="Views\Categoria\Edita.cshtml" />
+    <Content Include="Views\PessoaFisica\Edita.cshtml" />
+    <Content Include="Views\PessoaJuridica\Edita.cshtml" />
+    <Content Include="Views\Produto\Edita.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -64,5 +64,28 @@ namespace ProjetoBanca.Controllers
             pessoaFisicaDAO.Remover(pessoa);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Edita(int id)
+        {
+            var pfDAO = new PessoaFisicaDAO();
+            var pessoa = pfDAO.Buscar(id);
+            ViewBag.Pessoa = pessoa;
+
+            var tipoDAO = new TipoUsuarioDAO();
+            var tipos = tipoDAO.Lista();
+            ViewBag.TipoUsuario = tipos;
+
+            return View();
+        }
+
+        public ActionResult Editar(PessoaFisica pessoa)
+        {
+            var pfDAO = new PessoaFisicaDAO();
+            pfDAO.Atualizar(pessoa);
+
+            var pessoas = pfDAO.Lista();
+            ViewBag.Pessoa = pessoas;
+            return RedirectToAction("Index");
+        }
     }
 }

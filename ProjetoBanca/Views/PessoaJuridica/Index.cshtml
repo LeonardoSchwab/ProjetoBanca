@@ -6,7 +6,7 @@
 <table class="table cinza">
     <thead>
         <tr>
-            <th>Id</th>
+            <th style="display:none;">Id</th>
             <th>Nome</th>
             <th>Rua</th>
             <th>Bairro</th>
@@ -14,6 +14,7 @@
             <th>Complemento</th>
             <th>CNPJ</th>
             <th>Preco</th>
+            <th>Editar</th>
             <th>Remover</th>
         </tr>
     </thead>
@@ -21,7 +22,7 @@
         @foreach (var pessoa in ViewBag.PessoaJuridica)
         {
             <tr>
-                <td class="id">@pessoa.ID</td>
+                <td class="id" style="display:none;">@pessoa.ID</td>
                 <td class="nome">@pessoa.Nome</td>
                 <td class="rua">@pessoa.Rua</td>
                 <td class="bairro">@pessoa.Bairro</td>
@@ -29,7 +30,8 @@
                 <td class="complemento">@pessoa.Complemento</td>
                 <td class="cnpj">@pessoa.CNPJ</td>
                 <td class="preco">@pessoa.Preco</td>
-                <td><a class="botao-remover" href="#">D</a></td>
+                <td><a class="botao-editar fa fa-edit" href="http://localhost:62680/PessoaJuridica/Edita?id=@pessoa.ID"></a></td>
+                <td><a class="botao-remover fa fa-close" href="#"></a></td>
             </tr>
         }
     </tbody>

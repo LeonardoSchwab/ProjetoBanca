@@ -38,6 +38,8 @@ textarea {
 }
 
 .field-validation-error{
-    font-size: 18px;
+    font-size: 14px;
     color:red;
+    font-style: oblique;
+    font-weight: bolder;
 }

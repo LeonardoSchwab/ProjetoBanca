@@ -10,7 +10,7 @@ namespace ProjetoBanca.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("LoginColaborador", "Login");
         }
 
         public ActionResult About()

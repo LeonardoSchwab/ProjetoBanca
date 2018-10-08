@@ -47,5 +47,23 @@ namespace ProjetoBanca.Controllers
             pessoaJuridicaDAO.Remover(pessoa);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Edita(int id)
+        {
+            var pjDAO = new PessoaJuridicaDAO();
+            var pessoa = pjDAO.Buscar(id);
+            ViewBag.Pessoa = pessoa;
+            return View();
+        }
+
+        public ActionResult Editar(PessoaJuridica pessoa)
+        {
+            var pjDAO = new PessoaJuridicaDAO();
+            pjDAO.Atualizar(pessoa);
+
+            var pessoas = pjDAO.Lista();
+            ViewBag.Pessoa = pessoas;
+            return RedirectToAction("Index");
+        }
     }
 }

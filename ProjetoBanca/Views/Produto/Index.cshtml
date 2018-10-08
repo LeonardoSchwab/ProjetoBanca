@@ -6,7 +6,7 @@
 <table class="table cinza">
     <thead>
         <tr>
-            <th>Id</th>
+            <th style="display:none;">Id</th>
             <th>Nome</th>
             <th>Preço</th>
             <th>Pontos</th>
@@ -15,6 +15,7 @@
             <th>Categoria</th>
             <th>Fornecedor</th>
             <th>Limite estoque</th>
+            <th>Editar</th>
             <th>Remover</th>
         </tr>
     </thead>
@@ -22,7 +23,7 @@
         @foreach (var produto in ViewBag.Produto)
         {
             <tr>
-                <td class="id">@produto.ID</td>
+                <td class="id" style="display:none;">@produto.ID</td>
                 <td class="nome">@produto.Nome</td>
                 <td class="preco">@produto.Preco</td>
                 <td class="pontos">@produto.Pontos</td>
@@ -31,7 +32,8 @@
                 <td class="categoria">@produto.CategoriaID</td>
                 <td class="fornecedor">@produto.FornecedorID</td>
                 <td class="fornecedor">@produto.Estoque</td>
-                <td><a class="botao-remover" href="#">D</a></td>
+                <td><a class="botao-editar fa fa-edit" href="http://localhost:62680/Produto/Edita?id=@produto.ID"></a></td>
+                <td><a class="botao-remover fa fa-close" href="#"></a></td>
             </tr>
         }
     </tbody>

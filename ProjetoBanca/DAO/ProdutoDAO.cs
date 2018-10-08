@@ -29,7 +29,16 @@ namespace ProjetoBanca.DAO
         {
             using (var context = new ProjetoContext())
             {
-                context.Produto.Update(produto);
+                var prod = context.Produto.Find(produto.ID);
+                prod.Nome = produto.Nome;
+                prod.Pontos = produto.Pontos;
+                prod.Preco = produto.Preco;
+                prod.Quantidade = produto.Quantidade;
+                prod.Unidade = produto.Unidade;
+                prod.CategoriaID = prod.CategoriaID;
+                prod.FornecedorID = prod.FornecedorID;
+                prod.Estoque = prod.Estoque;
+                
                 context.SaveChanges();
             }
         }

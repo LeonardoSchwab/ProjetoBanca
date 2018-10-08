@@ -4,18 +4,21 @@
 }
 
 
-<form class="margem-superior" id="cad-produto" action="/Produto/Adiciona" method="post">
+<form class="margem-superior" id="cad-produto" action="/Produto/Editar" method="post">
     <div class="form-group">
         <div class="coluna1">
+
+            <input id="id" name="produto.ID" value=@ViewBag.Produto.ID class="form-control" style="display:none;" />
+
             <label for="nome">Nome:</label>
-            <input id="nome" name="produto.Nome" class="form-control tamanho-input" value="@ViewBag.Produto.Nome"/>
+            <input id="nome" name="produto.Nome" class="form-control tamanho-input" value="@ViewBag.Produto.Nome" />
             @Html.ValidationMessage("produto.Nome")
             <br />
             <label for="categoria">Categoria:</label>
             <select id="categoria" name="produto.CategoriaID" class="form-control tamanho-input">
                 @foreach (var categoria in ViewBag.Categoria)
                 {
-                    <option value="@categoria.ID">@categoria.Nome</option>
+                    <option value="@categoria.ID" selected="@categoria.ID.Equals(ViewBag.Produto.CategoriaID)">@categoria.Nome</option>
                 }
             </select>
             <br />
@@ -23,7 +26,7 @@
             <select id="fornecedor" name="produto.FornecedorID" class="form-control tamanho-input">
                 @foreach (var fornecedor in ViewBag.Fornecedor)
                 {
-                    <option value="@fornecedor.ID">@fornecedor.Nome</option>
+                    <option value="@fornecedor.ID" selected="@fornecedor.ID.Equals(ViewBag.Produto.FornecedorID)">@fornecedor.Nome</option>
                 }
             </select>
             <br />
@@ -34,7 +37,7 @@
             <input id="preco" name="produto.Preco" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Produto.Preco"/>
             @Html.ValidationMessage("produto.Preco")
             <br />
-            
+
             <label for="pontos">Pontos:</label>
             <input id="pontos" name="produto.Pontos" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Produto.Pontos"/>
 
@@ -55,7 +58,7 @@
         </div>
 
     </div>
-    <input type="submit" id="salvar-produto" class="form-control center-block ajustar-botao btn-success" />
+    <input type="submit" id="salvar-produto" class="form-control center-block ajustar-botao btn-primary" />
 </form>
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>

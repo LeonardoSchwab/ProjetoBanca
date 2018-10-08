@@ -1,29 +1,31 @@
 ﻿
 @{
-    // Layout = "~/Views/Shared/_Layout.cshtml";
     Layout = "~/Content/dodmond/_layout.cshtml";
 }
 
-<form class="margem-superior" id="cad-pj" action="/PessoaJuridica/Adiciona" method="post">
+<form class="margem-superior" id="cad-pj" action="/PessoaJuridica/Editar" method="post">
     <div class="form-group">
 
         <div class="coluna1">
+
+            <input id="id" name="pessoa.ID" value=@ViewBag.Pessoa.ID class="form-control" style="display:none;" />
+
             <label for="nome">Nome:</label>
-            <input id="nome" name="pessoa.Nome" class="form-control tamanho-input" value="@ViewBag.Pessoa.Nome"/>
+            <input id="nome" name="pessoa.Nome" class="form-control tamanho-input" value="@ViewBag.Pessoa.Nome" />
             @Html.ValidationMessage("pessoa.Nome")
             <br />
             <label for="cnpj">CNPJ:</label>
-            <input id="cnpj" name="pessoa.CNPJ" class="form-control tamanho-input" value="@ViewBag.Pessoa.CNPJ"/>
+            <input id="cnpj" name="pessoa.CNPJ" class="form-control tamanho-input" value="@ViewBag.Pessoa.CNPJ" />
             @Html.ValidationMessage("pessoa.CNPJ")
             <br />
             <label for="sexo">Sexo:</label>
-            <select id="sexo" name="pessoa.Sexo" class="form-control tamanho-input">
+            <select id="sexo" name="pessoa.Sexo" class="form-control tamanho-input" selected="@ViewBag.Pessoa.Sexo">
                 <option value="M">M</option>
                 <option value="F">F</option>
             </select>
             <br />
             <label for="preco">Preco:</label>
-            <input id="preco" name="pessoa.Preco" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Pessoa.Preco"/>
+            <input id="preco" name="pessoa.Preco" class="form-control tamanho-input" type="number" min="0" value="@ViewBag.Pessoa.Preco" />
             @Html.ValidationMessage("pessoa.Preco")
             <br />
         </div>
@@ -44,8 +46,8 @@
         </div>
 
     </div>
-    <input type="submit" id="salvar-pj" class="form-control center-block ajustar-botao" />
+    <input type="submit" id="salvar-pj" class="form-control center-block ajustar-botao btn-primary" />
 </form>
-    
+
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 <script src="~/Scripts/Meus scripts/Scripts-pessoaJuridica/main.js"></script>

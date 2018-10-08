@@ -40,12 +40,12 @@
             </div>
             <div class="col-md-3">
                 <label for="quantidade">Quantidade:</label>
-                <input id="quantidade" name="quantidade" class="form-control" />
+                <input id="quantidade" name="quantidade" class="form-control" type="number" min="0"/>
             </div>
             <span class="erro" style="display:none;">Preencha os campos de preço e quantidade!</span>
 
             <div class="col-md-3">
-                <input type="submit" id="enviar-carrinho" value="Enviar pro carrinho" class="form-control botao-carrinho" />
+                <input type="submit" id="enviar-carrinho" value="Enviar pro carrinho" class="form-control botao-carrinho btn-primary" />
             </div>
         </div>
     </div>
@@ -77,21 +77,11 @@
             <div class="col-md-4">
                 <label for="colaborador">Vendedor:</label>
                 <input id="colaborador" name="colaborador" disabled class="form-control" value="@ViewBag.Colaborador.Nome" />
-            </div>
-
-            <div class="col-md-3">
-                <label for="cliente">Cliente:</label>
-                <input id="cliente" name="cliente" disabled class="form-control" value="" />
-            </div>
-
-            <div class="col-md-2">
-                <label for="pontos">Pontos:</label>
-                <input id="pontos" name="pontos" disabled class="form-control" value="@ViewBag.Colaborador.Pontos" />
-            </div>
+            </div>            
 
         </div>
     </div>
-    <input type="submit" id="finalizar-compra" value="Finalizar compra" class="form-control" />
+    <input type="submit" id="finalizar-compra" value="Finalizar compra" class="form-control btn-success" />
 
 </form>
 
